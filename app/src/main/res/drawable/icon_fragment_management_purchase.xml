@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layer-list xmlns:android="http://schemas.android.com/apk/res/android">
+    <item>
+        <shape android:shape="rectangle">
+            <size android:width="100dp" android:height="100dp"/>
+            <solid android:color="@color/color_fragment_management_purchase"/>
+        </shape>
+    </item>
+    <item
+        android:top="30dp"
+        android:bottom="50dp"
+        android:left="54dp"
+        android:right="42dp">
+        <rotate android:fromDegrees="45">
+            <shape android:shape="rectangle">
+                <size android:width="4dp" android:height="20dp"/>
+                <corners android:radius="2dp"/>
+                <solid android:color="@color/color_universe_foreground"/>
+            </shape>
+        </rotate>
+    </item>
+    <item
+        android:top="30dp"
+        android:bottom="50dp"
+        android:left="42dp"
+        android:right="54dp">
+        <rotate android:fromDegrees="-45">
+            <shape android:shape="rectangle">
+                <size android:width="4dp" android:height="20dp"/>
+                <corners android:radius="2dp"/>
+                <solid android:color="@color/color_universe_foreground"/>
+            </shape>
+        </rotate>
+    </item>
+    <item>
+        <shape
+            android:shape="ring"
+            android:innerRadius="32dp"
+            android:thickness="4dp"
+            android:useLevel="false">
+            <solid android:color="@color/color_universe_foreground"/>
+        </shape>
+    </item>
+    <item
+        android:top="44dp"
+        android:bottom="52dp"
+        android:left="36dp"
+        android:right="36dp">
+        <shape android:shape="rectangle">
+            <size android:width="28dp" android:height="4dp"/>
+            <corners android:radius="2dp"/>
+            <solid android:color="@color/color_universe_foreground"/>
+        </shape>
+    </item>
+    <item
+        android:top="56dp"
+        android:bottom="40dp"
+        android:left="36dp"
+        android:right="36dp">
+        <shape android:shape="rectangle">
+            <size android:width="28dp" android:height="4dp"/>
+            <corners android:radius="2dp"/>
+            <solid android:color="@color/color_universe_foreground"/>
+        </shape>
+    </item>
+    <item
+        android:top="44dp"
+        android:bottom="28dp"
+        android:left="48dp"
+        android:right="48dp">
+        <shape android:shape="rectangle">
+            <size android:width="4dp" android:height="28dp"/>
+            <corners android:radius="2dp"/>
+            <solid android:color="@color/color_universe_foreground"/>
+        </shape>
+    </item>
+</layer-list>

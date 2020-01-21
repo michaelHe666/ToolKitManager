@@ -1,0 +1,71 @@
+<resources>
+    <string name="app_name">工具助手</string>
+
+    <!--universe strings-->
+    <string name="string_universe_processing_bar_text_wait">加载中</string>
+
+    <!--strings for activity main-->
+    <string name="string_activity_main_home">我的工具夹</string>
+    <string name="string_activity_main_management">工具夹管理</string>
+    <string name="string_activity_main_message">我的消息</string>
+    <string name="string_activity_main_settings">软件及账号设置</string>
+    <string name="string_activity_main_home_button">我的</string>
+    <string name="string_activity_main_management_button">管理</string>
+    <string name="string_activity_main_message_button">消息</string>
+    <string name="string_activity_main_settings_button">设置</string>
+
+    <!--strings for activity login-->
+    <string name="string_activity_login_text_login">登录</string>
+    <string name="string_activity_login_text_register">注册</string>
+    <string name="string_activity_login_text_submit">确认</string>
+    <string name="string_activity_login_hint_username">请输入手机号</string>
+    <string name="string_activity_login_hint_password">请输入密码</string>
+
+    <!--strings for fragment home-->
+    <string name="string_fragment_home_title_deadline">归还日期</string>
+    <string name="string_fragment_home_title_position">故障率</string>
+    <string name="string_fragment_home_title_risk">定位</string>
+
+    <!--strings for fragment management-->
+    <string name="string_fragment_management_purchase">采购申请</string>
+    <string name="string_fragment_management_in">出库申请</string>
+    <string name="string_fragment_management_out">归库申请</string>
+    <string name="string_fragment_management_repair">维修申请</string>
+    <string name="string_fragment_management_scrap">报废申请</string>
+
+    <!--strings for fragment Message-->
+    <string name="string_fragment_Message_title_system">系统通知</string>
+    <string name="string_fragment_Message_title_company">公司通知</string>
+
+    <!--strings for fragment settings-->
+    <string name="string_fragment_settings_ui">界面设置</string>
+    <string name="string_fragment_settings_notification">通知设置</string>
+    <string name="string_fragment_settings_security">安全设置</string>
+    <string name="string_fragment_settings_update">检查更新</string>
+    <string name="string_fragment_settings_contacts">联系我们</string>
+
+    <!--strings for fragment purchase-->
+    <string name="string_fragment_purchase_title_name">申请人</string>
+    <string name="string_fragment_purchase_title_tool_name">物品名称</string>
+    <string name="string_fragment_purchase_title_tool_price">物品价格</string>
+    <string name="string_fragment_purchase_title_tool_number">物品数量</string>
+    <string name="string_fragment_purchase_title_get_date">预计入库</string>
+    <string name="string_fragment_purchase_title_reason">申请原因</string>
+    <string name="string_fragment_purchase_title_name_hint">请输入申请人姓名</string>
+    <string name="string_fragment_purchase_title_tool_name_hint">请输入物品名称</string>
+    <string name="string_fragment_purchase_title_tool_price_hint">请输入物品价格（人民币）</string>
+    <string name="string_fragment_purchase_title_reason_hint">请输入申请原因</string>
+
+    <!--strings for fragment bottom_date_picker-->
+    <string name="string_fragment_bottom_date_picker_title_sure">确认</string>
+    <string name="string_fragment_bottom_date_picker_title_cancel">取消</string>
+
+    <!--strings for views myToolKitCard-->
+    <string name="string_views_my_tool_kit_card_subtitle_deadline">截止日期</string>
+    <string name="string_views_my_tool_kit_card_subtitle_position">定位</string>
+    <string name="string_views_my_tool_kit_card_subtitle_risk">风险</string>
+
+    <!--strings for fairs login-->
+    <string name="string_presenter_login_prompt_success">登录成功</string>
+    <string name="string_presenter_login_prompt_fail">登录失败</string>
+</resources>

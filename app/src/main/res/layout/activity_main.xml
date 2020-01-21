@@ -1,0 +1,131 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/color_universe_background"
+    tools:context=".views.activities.MainActivity">
+
+    <cn.edu.zust.dmt.tkm.views.widgets.raw.MyTopBar
+        android:id="@+id/activityMainMyTopBar"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintDimensionRatio="9:1"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:background="@color/color_universe_foreground" />
+
+    <androidx.viewpager.widget.ViewPager
+        android:id="@+id/activityMainContainerViewPager"
+        app:layout_constraintTop_toBottomOf="@id/activityMainMyTopBar"
+        app:layout_constraintBottom_toTopOf="@id/activityMainBottomBarView"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        android:layout_width="0dp"
+        android:layout_height="0dp"/>
+
+    <View
+        android:id="@+id/activityMainBottomBarView"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        app:layout_constraintDimensionRatio="9:1"
+        android:background="@color/color_universe_foreground"/>
+
+    <ImageButton
+        android:id="@+id/activityMainHomeImageButton"
+        app:layout_constraintTop_toTopOf="@id/activityMainBottomBarView"
+        app:layout_constraintLeft_toLeftOf="@id/activityMainBottomBarView"
+        app:layout_constraintRight_toLeftOf="@id/activityMainManagementImageButton"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        app:layout_constraintWidth_percent="0.08"
+        app:layout_constraintDimensionRatio="1:1"
+        style="@style/style_activity_main_image_button"
+        android:scaleType="centerCrop"
+        android:src="@drawable/icon_activity_main_home"/>
+
+    <TextView
+        app:layout_constraintTop_toBottomOf="@id/activityMainHomeImageButton"
+        app:layout_constraintBottom_toBottomOf="@id/activityMainBottomBarView"
+        app:layout_constraintLeft_toLeftOf="@id/activityMainHomeImageButton"
+        app:layout_constraintRight_toRightOf="@id/activityMainHomeImageButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        style="@style/style_activity_main_bottom_bar_text"
+        android:text="@string/string_activity_main_home_button"/>
+
+    <ImageButton
+        android:id="@+id/activityMainManagementImageButton"
+        app:layout_constraintTop_toTopOf="@id/activityMainBottomBarView"
+        app:layout_constraintLeft_toRightOf="@id/activityMainHomeImageButton"
+        app:layout_constraintRight_toLeftOf="@id/activityMainMessageImageButton"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        app:layout_constraintWidth_percent="0.08"
+        app:layout_constraintDimensionRatio="1:1"
+        style="@style/style_activity_main_image_button"
+        android:scaleType="centerCrop"
+        android:src="@drawable/icon_activity_main_management"/>
+
+    <TextView
+        app:layout_constraintTop_toBottomOf="@id/activityMainManagementImageButton"
+        app:layout_constraintBottom_toBottomOf="@id/activityMainBottomBarView"
+        app:layout_constraintLeft_toLeftOf="@id/activityMainManagementImageButton"
+        app:layout_constraintRight_toRightOf="@id/activityMainManagementImageButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        style="@style/style_activity_main_bottom_bar_text"
+        android:text="@string/string_activity_main_management_button"/>
+
+    <ImageButton
+        android:id="@+id/activityMainMessageImageButton"
+        app:layout_constraintTop_toTopOf="@id/activityMainBottomBarView"
+        app:layout_constraintLeft_toRightOf="@id/activityMainManagementImageButton"
+        app:layout_constraintRight_toLeftOf="@id/activityMainSettingsImageButton"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        app:layout_constraintWidth_percent="0.08"
+        app:layout_constraintDimensionRatio="1:1"
+        style="@style/style_activity_main_image_button"
+        android:scaleType="centerCrop"
+        android:src="@drawable/icon_activity_main_message"/>
+
+    <TextView
+        app:layout_constraintTop_toBottomOf="@id/activityMainMessageImageButton"
+        app:layout_constraintBottom_toBottomOf="@id/activityMainBottomBarView"
+        app:layout_constraintLeft_toLeftOf="@id/activityMainMessageImageButton"
+        app:layout_constraintRight_toRightOf="@id/activityMainMessageImageButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        style="@style/style_activity_main_bottom_bar_text"
+        android:text="@string/string_activity_main_message_button"/>
+
+    <ImageButton
+        android:id="@+id/activityMainSettingsImageButton"
+        app:layout_constraintTop_toTopOf="@id/activityMainBottomBarView"
+        app:layout_constraintLeft_toRightOf="@id/activityMainMessageImageButton"
+        app:layout_constraintRight_toRightOf="@id/activityMainBottomBarView"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        app:layout_constraintWidth_percent="0.08"
+        app:layout_constraintDimensionRatio="1:1"
+        style="@style/style_activity_main_image_button"
+        android:scaleType="centerCrop"
+        android:src="@drawable/icon_activity_main_settings"/>
+
+    <TextView
+        app:layout_constraintTop_toBottomOf="@id/activityMainSettingsImageButton"
+        app:layout_constraintBottom_toBottomOf="@id/activityMainBottomBarView"
+        app:layout_constraintLeft_toLeftOf="@id/activityMainSettingsImageButton"
+        app:layout_constraintRight_toRightOf="@id/activityMainSettingsImageButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        style="@style/style_activity_main_bottom_bar_text"
+        android:text="@string/string_activity_main_settings_button"/>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

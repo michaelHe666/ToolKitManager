@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:background="@color/color_universe_foreground">
+
+    <TextView
+        android:id="@+id/viewsMyFormBarTextView"
+        app:layout_constraintTop_toTopOf="@id/viewsMyFormBarEditText"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintHorizontal_bias="0.1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        style="@style/style_views_my_form_title"
+        tools:text="@string/app_name"/>
+
+    <EditText
+        android:id="@+id/viewsMyFormBarEditText"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintHorizontal_bias="0.75"
+        app:layout_constraintWidth_percent="0.6"
+        android:inputType="text"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        style="@style/style_views_my_form_input"
+        tools:hint="@string/app_name"/>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

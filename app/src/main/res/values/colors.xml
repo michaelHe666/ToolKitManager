@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">#008577</color>
+    <color name="colorPrimaryDark">#00574B</color>
+    <color name="colorAccent">#D81B60</color>
+
+    <!--color for universe-->
+    <color name="color_universe_app_theme_color">#8BC34A</color>
+    <color name="color_universe_icon">#000000</color>
+    <color name="color_universe_background">#F2F2F2</color>
+    <color name="color_universe_foreground">#FFFFFF</color>
+    <color name="color_universe_edit_text_underline_unfocused">#52979797</color>
+    <color name="color_universe_text_hint">#999999</color>
+    <color name="color_universe_text">#333333</color>
+    <color name="color_universe_text_title">#1F1F1F</color>
+
+    <!--color for activity login-->
+    <color name="color_activity_login_username_icon">#00EB76</color>
+    <color name="color_activity_login_password_icon">#E7B121</color>
+    <color name="color_activity_login_message_icon">#2D23C3</color>
+    <color name="color_activity_login_settings_icon">#E50000</color>
+
+    <!--color for activity main-->
+    <color name="color_activity_main_home_icon">#00EB76</color>
+    <color name="color_activity_main_management_icon">#E7B121</color>
+    <color name="color_activity_main_message_icon">#2D23C3</color>
+    <color name="color_activity_main_settings_icon">#E50000</color>
+
+    <!--color for fragment management-->
+    <color name="color_fragment_management_purchase">#E4C87F</color>
+    <color name="color_fragment_management_in">#C5D16B</color>
+    <color name="color_fragment_management_out">#5CC28F</color>
+    <color name="color_fragment_management_repair">#5C60C2</color>
+    <color name="color_fragment_management_scrap">#9F9F9F</color>
+
+    <!--color for fragment settings-->
+    <color name="color_fragment_settings_ui">#E7B121</color>
+    <color name="color_fragment_settings_notification">#2D23C3</color>
+    <color name="color_fragment_settings_security">#D22A2A</color>
+    <color name="color_fragment_settings_update">#36A39F</color>
+    <color name="color_fragment_settings_contacts">#74CB4D</color>
+
+    <!--color for views myToolKitCard-->
+    <color name="color_my_tool_kit_card_normal">#8BC34A</color>
+    <color name="color_my_tool_kit_card_warning">#F44336</color>
+    <color name="color_my_tool_kit_card_background">#F5F5DC</color>
+    <color name="color_my_tool_kit_card_divider">#BBBBBB</color>
+</resources>

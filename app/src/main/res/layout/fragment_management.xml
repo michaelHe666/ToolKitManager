@@ -1,0 +1,110 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingTop="30dp"
+        android:paddingBottom="30dp">
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/fragmentManagementLeftStartGuideline"
+            app:layout_constraintGuide_percent="0.08"
+            android:orientation="vertical"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"/>
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/fragmentManagementLeftEndGuideline"
+            app:layout_constraintGuide_percent="0.46"
+            android:orientation="vertical"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"/>
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/fragmentManagementRightStartGuideline"
+            app:layout_constraintGuide_percent="0.54"
+            android:orientation="vertical"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"/>
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/fragmentManagementRightEndGuideline"
+            app:layout_constraintGuide_percent="0.92"
+            android:orientation="vertical"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"/>
+
+        <cn.edu.zust.dmt.tkm.views.widgets.raw.MyOptionCard
+            android:id="@+id/fragmentManagementPurchaseMyOptionCard"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintLeft_toLeftOf="@id/fragmentManagementLeftStartGuideline"
+            app:layout_constraintRight_toRightOf="@id/fragmentManagementLeftEndGuideline"
+            app:layout_constraintDimensionRatio="3:4"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            app:myOptionCardCornerRadius="16dp"
+            app:myOptionCardBackgroundColor="@color/color_fragment_management_purchase"
+            app:myOptionCardIcon="@drawable/icon_fragment_management_purchase"
+            app:myOptionCardTitle="@string/string_fragment_management_purchase"/>
+
+        <cn.edu.zust.dmt.tkm.views.widgets.raw.MyOptionCard
+            android:id="@+id/fragmentManagementInMyOptionCard"
+            app:layout_constraintTop_toTopOf="@id/fragmentManagementPurchaseMyOptionCard"
+            app:layout_constraintLeft_toLeftOf="@id/fragmentManagementRightStartGuideline"
+            app:layout_constraintRight_toRightOf="@id/fragmentManagementRightEndGuideline"
+            app:layout_constraintDimensionRatio="3:4"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            app:myOptionCardCornerRadius="16dp"
+            app:myOptionCardBackgroundColor="@color/color_fragment_management_in"
+            app:myOptionCardIcon="@drawable/icon_fragment_management_in"
+            app:myOptionCardTitle="@string/string_fragment_management_in"/>
+
+        <cn.edu.zust.dmt.tkm.views.widgets.raw.MyOptionCard
+            android:id="@+id/fragmentManagementOutMyOptionCard"
+            app:layout_constraintTop_toBottomOf="@id/fragmentManagementPurchaseMyOptionCard"
+            app:layout_constraintLeft_toLeftOf="@id/fragmentManagementLeftStartGuideline"
+            app:layout_constraintRight_toRightOf="@id/fragmentManagementLeftEndGuideline"
+            app:layout_constraintDimensionRatio="3:4"
+            android:layout_marginTop="16dp"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            app:myOptionCardCornerRadius="16dp"
+            app:myOptionCardBackgroundColor="@color/color_fragment_management_out"
+            app:myOptionCardIcon="@drawable/icon_fragment_management_out"
+            app:myOptionCardTitle="@string/string_fragment_management_out"/>
+
+        <cn.edu.zust.dmt.tkm.views.widgets.raw.MyOptionCard
+            android:id="@+id/fragmentManagementRepairMyOptionCard"
+            app:layout_constraintTop_toTopOf="@id/fragmentManagementOutMyOptionCard"
+            app:layout_constraintLeft_toLeftOf="@id/fragmentManagementRightStartGuideline"
+            app:layout_constraintRight_toRightOf="@id/fragmentManagementRightEndGuideline"
+            app:layout_constraintDimensionRatio="3:4"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            app:myOptionCardCornerRadius="16dp"
+            app:myOptionCardBackgroundColor="@color/color_fragment_management_repair"
+            app:myOptionCardIcon="@drawable/icon_fragment_management_repair"
+            app:myOptionCardTitle="@string/string_fragment_management_repair"/>
+
+        <cn.edu.zust.dmt.tkm.views.widgets.raw.MyOptionCard
+            android:id="@+id/fragmentManagementScrapMyOptionCard"
+            app:layout_constraintTop_toBottomOf="@id/fragmentManagementOutMyOptionCard"
+            app:layout_constraintLeft_toLeftOf="@id/fragmentManagementLeftStartGuideline"
+            app:layout_constraintRight_toRightOf="@id/fragmentManagementLeftEndGuideline"
+            app:layout_constraintDimensionRatio="3:4"
+            android:layout_marginTop="16dp"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            app:myOptionCardCornerRadius="16dp"
+            app:myOptionCardBackgroundColor="@color/color_fragment_management_scrap"
+            app:myOptionCardIcon="@drawable/icon_fragment_management_scrap"
+            app:myOptionCardTitle="@string/string_fragment_management_scrap"/>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</ScrollView>

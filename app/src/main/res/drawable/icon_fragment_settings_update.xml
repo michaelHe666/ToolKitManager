@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layer-list xmlns:android="http://schemas.android.com/apk/res/android">
+    <item>
+        <shape android:shape="rectangle">
+            <size android:width="100dp" android:height="100dp"/>
+            <solid android:color="@color/color_universe_foreground"/>
+        </shape>
+    </item>
+    <item
+        android:top="16dp"
+        android:bottom="17dp"
+        android:left="45dp"
+        android:right="45dp">
+        <shape android:shape="rectangle">
+            <size android:width="10dp" android:height="67dp"/>
+            <corners android:radius="5dp"/>
+            <solid android:color="@color/color_fragment_settings_update"/>
+        </shape>
+    </item>
+    <item
+        android:top="40dp"
+        android:bottom="13dp"
+        android:left="60dp"
+        android:right="30dp">
+        <rotate android:fromDegrees="45">
+            <shape android:shape="rectangle">
+                <size android:width="10dp" android:height="47dp"/>
+                <corners android:radius="5dp"/>
+                <solid android:color="@color/color_fragment_settings_update"/>
+            </shape>
+        </rotate>
+    </item>
+    <item
+        android:top="40dp"
+        android:bottom="13dp"
+        android:left="30dp"
+        android:right="60dp">
+        <rotate android:fromDegrees="-45">
+            <shape android:shape="rectangle">
+                <size android:width="10dp" android:height="47dp"/>
+                <corners android:radius="5dp"/>
+                <solid android:color="@color/color_fragment_settings_update"/>
+            </shape>
+        </rotate>
+    </item>
+</layer-list>

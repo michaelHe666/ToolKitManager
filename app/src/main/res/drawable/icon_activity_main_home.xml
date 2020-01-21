@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layer-list xmlns:android="http://schemas.android.com/apk/res/android">
+    <item>
+        <shape android:shape="rectangle">
+            <size android:width="100dp" android:height="100dp"/>
+            <solid android:color="@color/color_universe_foreground"/>
+        </shape>
+    </item>
+    <item
+        android:top="20dp"
+        android:bottom="20dp"
+        android:left="20dp"
+        android:right="20dp">
+        <rotate
+            android:fromDegrees="-45"
+            android:pivotX="62%"
+            android:pivotY="55%">
+            <shape android:shape="rectangle">
+                <solid android:color="@color/color_activity_main_home_icon"/>
+                <size android:width="36dp" android:height="36dp"/>
+            </shape>
+        </rotate>
+    </item>
+    <item
+        android:top="50dp"
+        android:bottom="0dp"
+        android:left="0dp"
+        android:right="0dp">
+        <shape android:shape="rectangle">
+            <size android:width="100dp" android:height="50dp"/>
+            <solid android:color="@color/color_universe_foreground"/>
+        </shape>
+    </item>
+    <item
+        android:top="50dp"
+        android:bottom="15dp"
+        android:left="22dp"
+        android:right="22dp">
+        <shape android:shape="rectangle">
+            <size android:width="56dp" android:height="35dp"/>
+            <solid android:color="@color/color_activity_main_home_icon"/>
+        </shape>
+    </item>
+    <item
+        android:top="60dp"
+        android:bottom="15dp"
+        android:left="42dp"
+        android:right="42dp">
+        <shape android:shape="rectangle">
+            <size android:width="16dp" android:height="25dp"/>
+            <solid android:color="@color/color_universe_foreground"/>
+        </shape>
+    </item>
+</layer-list>

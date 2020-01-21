@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layer-list xmlns:android="http://schemas.android.com/apk/res/android">
+    <item>
+        <shape android:shape="rectangle">
+            <size android:width="100dp" android:height="100dp"/>
+            <solid android:color="@color/color_universe_foreground"/>
+        </shape>
+    </item>
+    <item>
+        <shape
+            android:shape="ring"
+            android:innerRadius="12dp"
+            android:thickness="16dp"
+            android:useLevel="false">
+            <solid android:color="@color/color_fragment_settings_ui"/>
+        </shape>
+    </item>
+    <item
+        android:top="12dp"
+        android:bottom="72dp"
+        android:left="42dp"
+        android:right="42dp">
+        <shape android:shape="rectangle">
+            <size android:width="16dp" android:height="16dp"/>
+            <solid android:color="@color/color_fragment_settings_ui"/>
+            <corners android:radius="6dp"/>
+        </shape>
+    </item>
+    <item
+        android:top="72dp"
+        android:bottom="12dp"
+        android:left="42dp"
+        android:right="42dp">
+        <shape android:shape="rectangle">
+            <size android:width="16dp" android:height="16dp"/>
+            <solid android:color="@color/color_fragment_settings_ui"/>
+            <corners android:radius="6dp"/>
+        </shape>
+    </item>
+    <item
+        android:top="58dp"
+        android:bottom="26dp"
+        android:left="16dp"
+        android:right="68dp">
+        <rotate android:fromDegrees="60">
+            <shape android:shape="rectangle">
+                <size android:width="16dp" android:height="16dp"/>
+                <solid android:color="@color/color_fragment_settings_ui"/>
+                <corners android:radius="6dp"/>
+            </shape>
+        </rotate>
+    </item>
+    <item
+        android:top="26dp"
+        android:bottom="58dp"
+        android:left="68dp"
+        android:right="16dp">
+        <rotate android:fromDegrees="-120">
+            <shape android:shape="rectangle">
+                <size android:width="16dp" android:height="16dp"/>
+                <solid android:color="@color/color_fragment_settings_ui"/>
+                <corners android:radius="6dp"/>
+            </shape>
+        </rotate>
+    </item>
+    <item
+        android:top="58dp"
+        android:bottom="26dp"
+        android:left="68dp"
+        android:right="16dp">
+        <rotate android:fromDegrees="-60">
+            <shape android:shape="rectangle">
+                <size android:width="16dp" android:height="16dp"/>
+                <solid android:color="@color/color_fragment_settings_ui"/>
+                <corners android:radius="6dp"/>
+            </shape>
+        </rotate>
+    </item>
+    <item
+        android:top="26dp"
+        android:bottom="58dp"
+        android:left="16dp"
+        android:right="68dp">
+        <rotate android:fromDegrees="120">
+            <shape android:shape="rectangle">
+                <size android:width="16dp" android:height="16dp"/>
+                <solid android:color="@color/color_fragment_settings_ui"/>
+                <corners android:radius="6dp"/>
+            </shape>
+        </rotate>
+    </item>
+</layer-list>

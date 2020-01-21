@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layer-list xmlns:android="http://schemas.android.com/apk/res/android">
+    <item>
+        <shape android:shape="rectangle">
+            <size android:width="100dp" android:height="100dp"/>
+            <solid android:color="@color/color_fragment_management_repair"/>
+        </shape>
+    </item>
+    <item
+        android:top="0dp"
+        android:bottom="30dp"
+        android:left="30dp"
+        android:right="0dp">
+        <shape
+            android:shape="ring"
+            android:innerRadius="16dp"
+            android:thickness="4dp"
+            android:useLevel="false">
+            <solid android:color="@color/color_universe_foreground"/>
+        </shape>
+    </item>
+    <item
+        android:top="15dp"
+        android:bottom="55dp"
+        android:left="62dp"
+        android:right="22dp">
+        <rotate android:fromDegrees="45">
+            <shape android:shape="rectangle">
+                <size android:height="30dp" android:width="16dp"/>
+                <corners android:bottomLeftRadius="8dp"
+                    android:bottomRightRadius="8dp"/>
+                <solid android:color="@color/color_universe_foreground"/>
+            </shape>
+        </rotate>
+    </item>
+    <item
+        android:top="11dp"
+        android:bottom="59dp"
+        android:left="70dp"
+        android:right="22dp">
+        <rotate android:fromDegrees="45">
+            <shape android:shape="rectangle">
+                <size android:height="30dp" android:width="8dp"/>
+                <corners android:bottomLeftRadius="4dp"
+                    android:bottomRightRadius="4dp"/>
+                <solid android:color="@color/color_fragment_management_repair"/>
+            </shape>
+        </rotate>
+    </item>
+    <item
+        android:top="5dp"
+        android:bottom="65dp"
+        android:left="78dp"
+        android:right="10dp">
+        <rotate android:fromDegrees="-45">
+            <shape android:shape="rectangle">
+                <size android:height="30dp" android:width="12dp"/>
+                <solid android:color="@color/color_fragment_management_repair"/>
+            </shape>
+        </rotate>
+    </item>
+    <item
+        android:top="40dp"
+        android:bottom="10dp"
+        android:left="25dp"
+        android:right="55dp">
+        <rotate android:fromDegrees="45">
+            <shape android:shape="rectangle">
+                <size android:height="50dp" android:width="18dp"/>
+                <corners android:bottomLeftRadius="9dp"
+                    android:bottomRightRadius="9dp"/>
+                <solid android:color="@color/color_universe_foreground"/>
+            </shape>
+        </rotate>
+    </item>
+    <item
+        android:top="38dp"
+        android:bottom="14dp"
+        android:left="33dp"
+        android:right="57dp">
+        <rotate android:fromDegrees="45">
+            <shape android:shape="rectangle">
+                <size android:height="48dp" android:width="10dp"/>
+                <corners android:bottomLeftRadius="5dp"
+                    android:bottomRightRadius="5dp"/>
+                <solid android:color="@color/color_fragment_management_repair"/>
+            </shape>
+        </rotate>
+    </item>
+</layer-list>

@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:fillViewport="true"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <cn.edu.zust.dmt.tkm.views.widgets.raw.MyFormBar
+            android:id="@+id/fragmentPurchaseNameMyFormBar"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            android:layout_marginTop="32dp"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            app:layout_constraintDimensionRatio="17:2"
+            app:myFormBarTitle="@string/string_fragment_purchase_title_name"
+            app:myFormBarHint="@string/string_fragment_purchase_title_name_hint"/>
+
+        <cn.edu.zust.dmt.tkm.views.widgets.raw.MyFormBar
+            android:id="@+id/fragmentPurchaseToolNameMyFormBar"
+            app:layout_constraintTop_toBottomOf="@id/fragmentPurchaseNameMyFormBar"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            android:layout_marginTop="4dp"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            app:layout_constraintDimensionRatio="17:2"
+            app:myFormBarTitle="@string/string_fragment_purchase_title_tool_name"
+            app:myFormBarHint="@string/string_fragment_purchase_title_tool_name_hint"/>
+
+        <cn.edu.zust.dmt.tkm.views.widgets.raw.MyFormBar
+            android:id="@+id/fragmentPurchaseToolPriceMyFormBar"
+            app:layout_constraintTop_toBottomOf="@id/fragmentPurchaseToolNameMyFormBar"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            android:layout_marginTop="4dp"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            app:layout_constraintDimensionRatio="17:2"
+            app:myFormBarTitle="@string/string_fragment_purchase_title_tool_price"
+            app:myFormBarHint="@string/string_fragment_purchase_title_tool_price_hint"/>
+
+        <cn.edu.zust.dmt.tkm.views.widgets.raw.MyFormBar
+            android:id="@+id/fragmentPurchaseToolNumberMyFormBar"
+            app:layout_constraintTop_toBottomOf="@id/fragmentPurchaseToolPriceMyFormBar"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            android:layout_marginTop="4dp"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            app:layout_constraintDimensionRatio="17:2"
+            app:myFormBarTitle="@string/string_fragment_purchase_title_tool_number"/>
+
+        <cn.edu.zust.dmt.tkm.views.widgets.raw.MyFormBar
+            android:id="@+id/fragmentPurchaseDateMyFormBar"
+            app:layout_constraintTop_toBottomOf="@id/fragmentPurchaseToolNumberMyFormBar"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            android:layout_marginTop="4dp"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            app:layout_constraintDimensionRatio="17:2"
+            app:myFormBarTitle="@string/string_fragment_purchase_title_get_date"/>
+
+        <cn.edu.zust.dmt.tkm.views.widgets.raw.MyFormBar
+            android:id="@+id/fragmentPurchaseReasonMyFormBar"
+            app:layout_constraintTop_toBottomOf="@id/fragmentPurchaseDateMyFormBar"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            android:layout_marginTop="4dp"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            app:layout_constraintDimensionRatio="17:2"
+            app:myFormBarTitle="@string/string_fragment_purchase_title_reason"
+            app:myFormBarHint="@string/string_fragment_purchase_title_reason_hint"/>
+
+        <Button
+            app:layout_constraintTop_toBottomOf="@id/fragmentPurchaseReasonMyFormBar"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintVertical_bias="1"
+            app:layout_constraintDimensionRatio="9:1"
+            android:layout_marginTop="60dp"
+            android:background="@color/color_universe_app_theme_color"
+            android:textColor="@color/color_universe_background"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:text="@string/string_activity_login_text_submit"
+            android:textSize="20sp" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</ScrollView>
