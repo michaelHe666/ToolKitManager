@@ -17,7 +17,7 @@ import cn.edu.zust.dmt.tkm.presenters.helpers.HttpHelper;
 import cn.edu.zust.dmt.tkm.views.activities.MainActivity;
 import cn.edu.zust.dmt.tkm.interfaces.listeners.EntranceFairListener;
 import cn.edu.zust.dmt.tkm.models.requests.PostLoginRequestModel;
-import cn.edu.zust.dmt.tkm.presenters.networks.BaseCallbackPostRequest;
+import cn.edu.zust.dmt.tkm.presenters.networks.BaseCallbackPost;
 
 /**
  * @author MR.M
@@ -53,7 +53,7 @@ public class EntranceFair implements BaseThreadCallbackInterface {
     }
 
     private void setEntranceRadioGroup() {
-        RadioGroup radioGroup = mCurrentListener.getStateRadioGroup();
+        final RadioGroup radioGroup = mCurrentListener.getStateRadioGroup();
         final int loginButtonRID = mCurrentListener.getLoginButton().getId();
         final int registerButtonRID = mCurrentListener.getRegisterButton().getId();
         final View mSubmitView = mCurrentListener.getSubmitTriggerView();
@@ -100,7 +100,7 @@ public class EntranceFair implements BaseThreadCallbackInterface {
         String postParamsString = (new Gson()).toJson(new PostLoginRequestModel(
                 mCurrentListener.getPhoneNumberEditText().getText().toString(),
                 mCurrentListener.getPasswordEditText().getText().toString()));
-        new BaseCallbackPostRequest(this, HttpHelper.LOGIN_PATH, postParamsString)
+        new BaseCallbackPost(this, HttpHelper.LOGIN_PATH, postParamsString)
                 .startAction();
     }
 
@@ -112,7 +112,7 @@ public class EntranceFair implements BaseThreadCallbackInterface {
         String postParamsString = (new Gson()).toJson(new PostLoginRequestModel(
                 mCurrentListener.getPhoneNumberEditText().getText().toString(),
                 mCurrentListener.getPasswordEditText().getText().toString()));
-        new BaseCallbackPostRequest(this, HttpHelper.REGISTER_PATH, postParamsString)
+        new BaseCallbackPost(this, HttpHelper.REGISTER_PATH, postParamsString)
                 .startAction();
     }
 
@@ -141,18 +141,18 @@ public class EntranceFair implements BaseThreadCallbackInterface {
      *               pick a method to receive obj if obj is expected
      */
     private void parseCallbackObject(@NonNull Object object) {
-        BaseRespondModel baseRespondModel = (new Gson()).fromJson(object.toString(), BaseRespondModel.class);
-        Object obj = baseRespondModel.getObj();
-        if (obj == null) {
-            mCurrentListener.showAppStyleShortToast(baseRespondModel.getError());
-            //todo:remove this entrance after projected down
-            Bundle bundle = new Bundle();
-            bundle.putString("key_target_fragment", "Home");
-            mCurrentListener.getActivityStartMethods().startBaseActivity(MainActivity.class, bundle);
-        } else {
-            endLogin(baseRespondModel.getDataModel(PostLoginRespondModel.class));
-            endRegister(baseRespondModel.getDataModel(PostRegisterRespondModel.class));
-        }
+        //todo:remove this entrance after projected down
+        Bundle bundle = new Bundle();
+        bundle.putString("key_target_fragment", "Home");
+        mCurrentListener.getActivityStartMethods().startBaseActivity(MainActivity.class, bundle);
+//        BaseRespondModel baseRespondModel = (new Gson()).fromJson(object.toString(), BaseRespondModel.class);
+//        Object obj = baseRespondModel.getObj();
+//        if (obj == null) {
+//            mCurrentListener.showAppStyleShortToast(baseRespondModel.getError());
+//        } else {
+//            endLogin(baseRespondModel.getDataModel(PostLoginRespondModel.class));
+//            endRegister(baseRespondModel.getDataModel(PostRegisterRespondModel.class));
+//        }
     }
 
     /**

@@ -3,7 +3,6 @@
     <item>
         <shape android:shape="rectangle">
             <size android:width="100dp" android:height="100dp"/>
-            <solid android:color="@color/color_fragment_management_repair"/>
         </shape>
     </item>
     <item

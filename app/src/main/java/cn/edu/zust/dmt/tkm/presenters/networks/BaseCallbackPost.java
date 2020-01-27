@@ -10,14 +10,14 @@ import cn.edu.zust.dmt.tkm.interfaces.BaseThreadCallbackInterface;
  * @time 1/5/2020 12:47
  * copyright(c) all rights reserved by MR.M
  **/
-public class BaseCallbackPostRequest {
+public class BaseCallbackPost {
 
     private String mPath;
     private String mParams;
 
     private BaseCallbackHandler myHandler;
 
-    public BaseCallbackPostRequest(BaseThreadCallbackInterface callbackInterface, String path, String params) {
+    public BaseCallbackPost(BaseThreadCallbackInterface callbackInterface, String path, String params) {
         this.myHandler = new BaseCallbackHandler(callbackInterface);
         this.mPath = path;
         this.mParams = params;

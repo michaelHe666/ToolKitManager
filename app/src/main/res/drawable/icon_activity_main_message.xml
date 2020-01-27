@@ -3,7 +3,6 @@
     <item>
         <shape android:shape="rectangle">
             <size android:width="100dp" android:height="100dp"/>
-            <solid android:color="@color/color_universe_foreground"/>
         </shape>
     </item>
     <item
@@ -35,12 +34,12 @@
         </rotate>
     </item>
     <item
-        android:top="0dp"
+        android:top="40dp"
         android:bottom="0dp"
         android:left="0dp"
         android:right="90dp">
         <shape android:shape="rectangle">
-            <size android:width="14dp" android:height="100dp"/>
+            <size android:width="14dp" android:height="60dp"/>
             <solid android:color="@color/color_universe_foreground"/>
         </shape>
     </item>

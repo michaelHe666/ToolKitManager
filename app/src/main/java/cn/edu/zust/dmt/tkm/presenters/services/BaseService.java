@@ -14,7 +14,7 @@ import androidx.annotation.Nullable;
  * @time 1/21/2020 11:10
  * copyright(c) all rights reserved by MR.M
  **/
-public class LoginService extends Service {
+public class BaseService extends Service {
     @Nullable
     @Override
     public IBinder onBind(Intent intent) {

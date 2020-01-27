@@ -34,7 +34,7 @@ import cn.edu.zust.dmt.tkm.presenters.tools.BaseActivityStackManager;
 public abstract class BaseActivity extends AppCompatActivity
         implements BaseActivityStartMethodsInterface,
         BaseActivityFragmentMethodsInterface,
-        BaseFairListener {
+        BaseFairListener{
 
     /**
      * @description processing dialog

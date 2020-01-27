@@ -3,7 +3,6 @@
     <item>
         <shape android:shape="rectangle">
             <size android:width="100dp" android:height="100dp"/>
-            <solid android:color="@color/color_fragment_management_in"/>
         </shape>
     </item>
     <item
@@ -42,10 +41,10 @@
     <item
         android:top="36dp"
         android:bottom="44dp"
-        android:left="30dp"
-        android:right="30dp">
+        android:left="32dp"
+        android:right="32dp">
         <shape android:shape="rectangle">
-            <size android:height="20dp" android:width="40dp"/>
+            <size android:height="20dp" android:width="36dp"/>
             <solid android:color="@color/color_fragment_management_in"/>
         </shape>
     </item>
