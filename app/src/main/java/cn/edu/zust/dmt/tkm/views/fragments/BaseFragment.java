@@ -14,6 +14,7 @@ import org.jetbrains.annotations.NotNull;
 
 import cn.edu.zust.dmt.tkm.interfaces.BaseActivityFragmentMethodsInterface;
 import cn.edu.zust.dmt.tkm.interfaces.BaseActivityStartMethodsInterface;
+import cn.edu.zust.dmt.tkm.interfaces.BaseThreadCallbackInterface;
 import cn.edu.zust.dmt.tkm.views.activities.BaseActivity;
 import cn.edu.zust.dmt.tkm.interfaces.listeners.BaseFairListener;
 
@@ -29,6 +30,8 @@ public abstract class BaseFragment extends Fragment
         implements BaseFairListener {
 
     private BaseActivity myParentActivity;
+
+    private BaseThreadCallbackInterface mBaseThreadCallbackInterface;
 
     @Override
     public void onAttach(@NotNull Context context) {
@@ -96,6 +99,11 @@ public abstract class BaseFragment extends Fragment
         myParentActivity.catchBasicFailure(returnCode, prompt);
     }
 
+    @Override
+    public final void setBaseThreadCallback(BaseThreadCallbackInterface baseThreadCallback) {
+        this.mBaseThreadCallbackInterface = baseThreadCallback;
+    }
+
     @NonNull
     @Override
     public final BaseActivityStartMethodsInterface getActivityStartMethods() {
@@ -106,6 +114,12 @@ public abstract class BaseFragment extends Fragment
     @Override
     public final BaseActivityFragmentMethodsInterface getFragmentManagerMethods() {
         return myParentActivity.getFragmentManagerMethods();
+    }
+
+    @NonNull
+    @Override
+    public final BaseThreadCallbackInterface getThreadCallbackMethods() {
+        return this.mBaseThreadCallbackInterface;
     }
 
     public final BaseActivity getParentActivity() {

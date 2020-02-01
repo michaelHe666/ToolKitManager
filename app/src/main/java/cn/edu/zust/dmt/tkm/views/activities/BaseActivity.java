@@ -18,6 +18,7 @@ import org.jetbrains.annotations.NotNull;
 import cn.edu.zust.dmt.tkm.R;
 import cn.edu.zust.dmt.tkm.interfaces.BaseActivityFragmentMethodsInterface;
 import cn.edu.zust.dmt.tkm.interfaces.BaseActivityStartMethodsInterface;
+import cn.edu.zust.dmt.tkm.interfaces.BaseThreadCallbackInterface;
 import cn.edu.zust.dmt.tkm.presenters.helpers.ToastHelper;
 import cn.edu.zust.dmt.tkm.interfaces.listeners.BaseFairListener;
 import cn.edu.zust.dmt.tkm.presenters.fairs.BaseFair;
@@ -34,7 +35,7 @@ import cn.edu.zust.dmt.tkm.presenters.tools.BaseActivityStackManager;
 public abstract class BaseActivity extends AppCompatActivity
         implements BaseActivityStartMethodsInterface,
         BaseActivityFragmentMethodsInterface,
-        BaseFairListener{
+        BaseFairListener {
 
     /**
      * @description processing dialog
@@ -45,6 +46,11 @@ public abstract class BaseActivity extends AppCompatActivity
      * @description helper to show toasts in different styles
      */
     protected final ToastHelper mToastHelper = ToastHelper.getInstance();
+
+    /**
+     * @description store callback method
+     */
+    protected BaseThreadCallbackInterface mBaseThreadCallbackInterface;
 
     /**
      * @description activity initializer
@@ -179,6 +185,14 @@ public abstract class BaseActivity extends AppCompatActivity
         }
     }
 
+    /**
+     * @param baseThreadCallback callback method provider
+     */
+    @Override
+    public void setBaseThreadCallback(BaseThreadCallbackInterface baseThreadCallback) {
+        this.mBaseThreadCallbackInterface = baseThreadCallback;
+    }
+
     @NonNull
     @Override
     public final BaseActivityStartMethodsInterface getActivityStartMethods() {
@@ -189,6 +203,12 @@ public abstract class BaseActivity extends AppCompatActivity
     @Override
     public final BaseActivityFragmentMethodsInterface getFragmentManagerMethods() {
         return this;
+    }
+
+    @NonNull
+    @Override
+    public final BaseThreadCallbackInterface getThreadCallbackMethods() {
+        return this.mBaseThreadCallbackInterface;
     }
 
     /**

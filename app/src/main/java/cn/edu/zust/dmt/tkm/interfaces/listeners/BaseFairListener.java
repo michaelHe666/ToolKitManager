@@ -4,6 +4,7 @@ import androidx.annotation.NonNull;
 
 import cn.edu.zust.dmt.tkm.interfaces.BaseActivityFragmentMethodsInterface;
 import cn.edu.zust.dmt.tkm.interfaces.BaseActivityStartMethodsInterface;
+import cn.edu.zust.dmt.tkm.interfaces.BaseThreadCallbackInterface;
 
 /**
  * @author MR.M
@@ -35,6 +36,11 @@ public interface BaseFairListener {
     void catchBasicFailure(int returnCode, @NonNull String prompt);
 
     /**
+     * @param baseThreadCallback callback method provider
+     */
+    void setBaseThreadCallback(BaseThreadCallbackInterface baseThreadCallback);
+
+    /**
      * @return interface transfer activity start method
      */
     @NonNull
@@ -45,4 +51,10 @@ public interface BaseFairListener {
      */
     @NonNull
     BaseActivityFragmentMethodsInterface getFragmentManagerMethods();
+
+    /**
+     * @return interface transfer callback method
+     */
+    @NonNull
+    BaseThreadCallbackInterface getThreadCallbackMethods();
 }
