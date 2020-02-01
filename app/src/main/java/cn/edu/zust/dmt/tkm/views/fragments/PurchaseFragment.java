@@ -8,7 +8,7 @@ import android.view.ViewGroup;
 import cn.edu.zust.dmt.tkm.R;
 import cn.edu.zust.dmt.tkm.interfaces.listeners.PurchaseFairListener;
 import cn.edu.zust.dmt.tkm.presenters.fairs.PurchaseFair;
-import cn.edu.zust.dmt.tkm.views.widgets.raw.MyFormBar;
+import cn.edu.zust.dmt.tkm.views.widgets.combined.MyFormBar;
 
 /**
  * @author MR.M

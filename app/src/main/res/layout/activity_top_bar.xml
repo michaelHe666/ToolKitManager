@@ -6,7 +6,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
-    <cn.edu.zust.dmt.tkm.views.widgets.raw.MyTopBar
+    <cn.edu.zust.dmt.tkm.views.widgets.combined.MyTopBar
         android:id="@+id/activityTopBarTopBar"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintLeft_toLeftOf="parent"

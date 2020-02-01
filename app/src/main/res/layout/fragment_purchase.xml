@@ -10,7 +10,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
 
-        <cn.edu.zust.dmt.tkm.views.widgets.raw.MyFormBar
+        <cn.edu.zust.dmt.tkm.views.widgets.combined.MyFormBar
             android:id="@+id/fragmentPurchaseNameMyFormBar"
             app:layout_constraintTop_toTopOf="parent"
             app:layout_constraintLeft_toLeftOf="parent"
@@ -22,7 +22,7 @@
             app:myFormBarTitle="@string/string_fragment_purchase_title_name"
             app:myFormBarHint="@string/string_fragment_purchase_title_name_hint"/>
 
-        <cn.edu.zust.dmt.tkm.views.widgets.raw.MyFormBar
+        <cn.edu.zust.dmt.tkm.views.widgets.combined.MyFormBar
             android:id="@+id/fragmentPurchaseToolNameMyFormBar"
             app:layout_constraintTop_toBottomOf="@id/fragmentPurchaseNameMyFormBar"
             app:layout_constraintLeft_toLeftOf="parent"
@@ -34,7 +34,7 @@
             app:myFormBarTitle="@string/string_fragment_purchase_title_tool_name"
             app:myFormBarHint="@string/string_fragment_purchase_title_tool_name_hint"/>
 
-        <cn.edu.zust.dmt.tkm.views.widgets.raw.MyFormBar
+        <cn.edu.zust.dmt.tkm.views.widgets.combined.MyFormBar
             android:id="@+id/fragmentPurchaseToolPriceMyFormBar"
             app:layout_constraintTop_toBottomOf="@id/fragmentPurchaseToolNameMyFormBar"
             app:layout_constraintLeft_toLeftOf="parent"
@@ -46,7 +46,7 @@
             app:myFormBarTitle="@string/string_fragment_purchase_title_tool_price"
             app:myFormBarHint="@string/string_fragment_purchase_title_tool_price_hint"/>
 
-        <cn.edu.zust.dmt.tkm.views.widgets.raw.MyFormBar
+        <cn.edu.zust.dmt.tkm.views.widgets.combined.MyFormBar
             android:id="@+id/fragmentPurchaseToolNumberMyFormBar"
             app:layout_constraintTop_toBottomOf="@id/fragmentPurchaseToolPriceMyFormBar"
             app:layout_constraintLeft_toLeftOf="parent"
@@ -57,7 +57,7 @@
             app:layout_constraintDimensionRatio="17:2"
             app:myFormBarTitle="@string/string_fragment_purchase_title_tool_number"/>
 
-        <cn.edu.zust.dmt.tkm.views.widgets.raw.MyFormBar
+        <cn.edu.zust.dmt.tkm.views.widgets.combined.MyFormBar
             android:id="@+id/fragmentPurchaseDateMyFormBar"
             app:layout_constraintTop_toBottomOf="@id/fragmentPurchaseToolNumberMyFormBar"
             app:layout_constraintLeft_toLeftOf="parent"
@@ -68,7 +68,7 @@
             app:layout_constraintDimensionRatio="17:2"
             app:myFormBarTitle="@string/string_fragment_purchase_title_get_date"/>
 
-        <cn.edu.zust.dmt.tkm.views.widgets.raw.MyFormBar
+        <cn.edu.zust.dmt.tkm.views.widgets.combined.MyFormBar
             android:id="@+id/fragmentPurchaseReasonMyFormBar"
             app:layout_constraintTop_toBottomOf="@id/fragmentPurchaseDateMyFormBar"
             app:layout_constraintLeft_toLeftOf="parent"

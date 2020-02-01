@@ -10,7 +10,7 @@ import androidx.annotation.NonNull;
 import cn.edu.zust.dmt.tkm.R;
 import cn.edu.zust.dmt.tkm.interfaces.listeners.ManagementFairListener;
 import cn.edu.zust.dmt.tkm.presenters.fairs.ManagementFair;
-import cn.edu.zust.dmt.tkm.views.widgets.raw.MyOptionCard;
+import cn.edu.zust.dmt.tkm.views.widgets.combined.MyOptionCard;
 
 /**
  * @author MR.M

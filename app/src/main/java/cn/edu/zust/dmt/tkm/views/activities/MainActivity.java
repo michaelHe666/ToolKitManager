@@ -13,7 +13,7 @@ import org.jetbrains.annotations.NotNull;
 import cn.edu.zust.dmt.tkm.R;
 import cn.edu.zust.dmt.tkm.interfaces.listeners.MainFairListener;
 import cn.edu.zust.dmt.tkm.presenters.fairs.MainFair;
-import cn.edu.zust.dmt.tkm.views.widgets.raw.MyTopBar;
+import cn.edu.zust.dmt.tkm.views.widgets.combined.MyTopBar;
 
 /**
  * @author MR.M

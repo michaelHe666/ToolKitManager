@@ -41,7 +41,7 @@ public class EntranceActivity extends BaseActivity
      */
     @Override
     protected void loadActivityView(Bundle savedInstanceState) {
-        setContentView(R.layout.activity_login);
+        setContentView(R.layout.activity_entrance);
     }
 
     @Override

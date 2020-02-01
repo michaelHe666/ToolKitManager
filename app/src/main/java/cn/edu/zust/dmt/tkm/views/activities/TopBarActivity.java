@@ -9,7 +9,7 @@ import androidx.annotation.NonNull;
 import cn.edu.zust.dmt.tkm.R;
 import cn.edu.zust.dmt.tkm.interfaces.listeners.TopBarFairListener;
 import cn.edu.zust.dmt.tkm.presenters.fairs.TopBarFair;
-import cn.edu.zust.dmt.tkm.views.widgets.raw.MyTopBar;
+import cn.edu.zust.dmt.tkm.views.widgets.combined.MyTopBar;
 
 /**
  * @author MR.M

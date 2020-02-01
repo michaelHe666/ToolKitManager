@@ -7,7 +7,7 @@
     android:background="@color/color_universe_background"
     tools:context=".views.activities.MainActivity">
 
-    <cn.edu.zust.dmt.tkm.views.widgets.raw.MyTopBar
+    <cn.edu.zust.dmt.tkm.views.widgets.combined.MyTopBar
         android:id="@+id/activityMainMyTopBar"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintLeft_toLeftOf="parent"

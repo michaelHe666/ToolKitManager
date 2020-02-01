@@ -38,7 +38,7 @@
             android:layout_width="0dp"
             android:layout_height="match_parent"/>
 
-        <cn.edu.zust.dmt.tkm.views.widgets.raw.MyOptionCard
+        <cn.edu.zust.dmt.tkm.views.widgets.combined.MyOptionCard
             android:id="@+id/fragmentManagementPurchaseMyOptionCard"
             app:layout_constraintTop_toTopOf="parent"
             app:layout_constraintLeft_toLeftOf="@id/fragmentManagementLeftStartGuideline"
@@ -51,7 +51,7 @@
             app:myOptionCardIcon="@drawable/icon_fragment_management_purchase"
             app:myOptionCardTitle="@string/string_fragment_management_purchase"/>
 
-        <cn.edu.zust.dmt.tkm.views.widgets.raw.MyOptionCard
+        <cn.edu.zust.dmt.tkm.views.widgets.combined.MyOptionCard
             android:id="@+id/fragmentManagementInMyOptionCard"
             app:layout_constraintTop_toTopOf="@id/fragmentManagementPurchaseMyOptionCard"
             app:layout_constraintLeft_toLeftOf="@id/fragmentManagementRightStartGuideline"
@@ -64,7 +64,7 @@
             app:myOptionCardIcon="@drawable/icon_fragment_management_in"
             app:myOptionCardTitle="@string/string_fragment_management_in"/>
 
-        <cn.edu.zust.dmt.tkm.views.widgets.raw.MyOptionCard
+        <cn.edu.zust.dmt.tkm.views.widgets.combined.MyOptionCard
             android:id="@+id/fragmentManagementOutMyOptionCard"
             app:layout_constraintTop_toBottomOf="@id/fragmentManagementPurchaseMyOptionCard"
             app:layout_constraintLeft_toLeftOf="@id/fragmentManagementLeftStartGuideline"
@@ -78,7 +78,7 @@
             app:myOptionCardIcon="@drawable/icon_fragment_management_out"
             app:myOptionCardTitle="@string/string_fragment_management_out"/>
 
-        <cn.edu.zust.dmt.tkm.views.widgets.raw.MyOptionCard
+        <cn.edu.zust.dmt.tkm.views.widgets.combined.MyOptionCard
             android:id="@+id/fragmentManagementRepairMyOptionCard"
             app:layout_constraintTop_toTopOf="@id/fragmentManagementOutMyOptionCard"
             app:layout_constraintLeft_toLeftOf="@id/fragmentManagementRightStartGuideline"
@@ -91,7 +91,7 @@
             app:myOptionCardIcon="@drawable/icon_fragment_management_repair"
             app:myOptionCardTitle="@string/string_fragment_management_repair"/>
 
-        <cn.edu.zust.dmt.tkm.views.widgets.raw.MyOptionCard
+        <cn.edu.zust.dmt.tkm.views.widgets.combined.MyOptionCard
             android:id="@+id/fragmentManagementScrapMyOptionCard"
             app:layout_constraintTop_toBottomOf="@id/fragmentManagementOutMyOptionCard"
             app:layout_constraintLeft_toLeftOf="@id/fragmentManagementLeftStartGuideline"

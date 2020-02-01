@@ -18,7 +18,7 @@ import java.util.Calendar;
 
 import cn.edu.zust.dmt.common.utils.DateUtil;
 import cn.edu.zust.dmt.tkm.R;
-import cn.edu.zust.dmt.tkm.views.widgets.raw.MyFormBar;
+import cn.edu.zust.dmt.tkm.views.widgets.combined.MyFormBar;
 
 import static cn.edu.zust.dmt.common.utils.DateUtil.myyyyMMddSlash2Format;
 

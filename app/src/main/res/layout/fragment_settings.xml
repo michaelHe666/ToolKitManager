@@ -56,7 +56,7 @@
         android:src="@drawable/icon_universe_more"
         android:scaleType="centerCrop"/>
 
-    <cn.edu.zust.dmt.tkm.views.widgets.raw.MyMenuBar
+    <cn.edu.zust.dmt.tkm.views.widgets.combined.MyMenuBar
         android:id="@+id/fragmentSettingsUIBackgroundView"
         app:layout_constraintTop_toBottomOf="@id/fragmentSettingsUserBackgroundView"
         app:layout_constraintLeft_toLeftOf="parent"
@@ -68,7 +68,7 @@
         app:myMenuBarTitle="@string/string_fragment_settings_ui"
         app:myMenuBarIcon="@drawable/icon_fragment_settings_ui"/>
 
-    <cn.edu.zust.dmt.tkm.views.widgets.raw.MyMenuBar
+    <cn.edu.zust.dmt.tkm.views.widgets.combined.MyMenuBar
         android:id="@+id/fragmentSettingsNoticeBackgroundView"
         app:layout_constraintTop_toBottomOf="@id/fragmentSettingsUIBackgroundView"
         app:layout_constraintLeft_toLeftOf="parent"
@@ -80,7 +80,7 @@
         app:myMenuBarTitle="@string/string_fragment_settings_notification"
         app:myMenuBarIcon="@drawable/icon_fragment_settings_notification"/>
 
-    <cn.edu.zust.dmt.tkm.views.widgets.raw.MyMenuBar
+    <cn.edu.zust.dmt.tkm.views.widgets.combined.MyMenuBar
         android:id="@+id/fragmentSettingsSecurityBackgroundView"
         app:layout_constraintTop_toBottomOf="@id/fragmentSettingsNoticeBackgroundView"
         app:layout_constraintLeft_toLeftOf="parent"
@@ -92,7 +92,7 @@
         app:myMenuBarTitle="@string/string_fragment_settings_security"
         app:myMenuBarIcon="@drawable/icon_fragment_settings_security"/>
 
-    <cn.edu.zust.dmt.tkm.views.widgets.raw.MyMenuBar
+    <cn.edu.zust.dmt.tkm.views.widgets.combined.MyMenuBar
         android:id="@+id/fragmentSettingsUpdateBackgroundView"
         app:layout_constraintTop_toBottomOf="@id/fragmentSettingsSecurityBackgroundView"
         app:layout_constraintLeft_toLeftOf="parent"
@@ -104,7 +104,7 @@
         app:myMenuBarTitle="@string/string_fragment_settings_update"
         app:myMenuBarIcon="@drawable/icon_fragment_settings_update"/>
 
-    <cn.edu.zust.dmt.tkm.views.widgets.raw.MyMenuBar
+    <cn.edu.zust.dmt.tkm.views.widgets.combined.MyMenuBar
         android:id="@+id/fragmentSettingsContactsBackgroundView"
         app:layout_constraintTop_toBottomOf="@id/fragmentSettingsUpdateBackgroundView"
         app:layout_constraintLeft_toLeftOf="parent"
