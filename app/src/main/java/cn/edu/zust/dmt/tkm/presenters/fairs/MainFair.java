@@ -11,7 +11,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 import cn.edu.zust.dmt.tkm.R;
-import cn.edu.zust.dmt.tkm.presenters.adapters.MainViewPagerAdapter;
+import cn.edu.zust.dmt.tkm.presenters.adapters.BaseFragmentPagerAdapter;
 import cn.edu.zust.dmt.tkm.views.fragments.HomeFragment;
 import cn.edu.zust.dmt.tkm.views.fragments.ManagementFragment;
 import cn.edu.zust.dmt.tkm.views.fragments.MessageFragment;
@@ -77,7 +77,7 @@ public class MainFair {
         fragmentList.add(new ManagementFragment());
         fragmentList.add(new MessageFragment());
         fragmentList.add(new SettingsFragment());
-        viewPager.setAdapter(new MainViewPagerAdapter(mCurrentListener.getFragmentManagerMethods().getMyFragmentManager(),
+        viewPager.setAdapter(new BaseFragmentPagerAdapter(mCurrentListener.getFragmentManagerMethods().getMyFragmentManager(),
                 fragmentList));
         viewPager.setOffscreenPageLimit(1);
     }

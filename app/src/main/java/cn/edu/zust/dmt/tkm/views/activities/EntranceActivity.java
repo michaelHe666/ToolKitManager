@@ -1,13 +1,10 @@
 package cn.edu.zust.dmt.tkm.views.activities;
 
 import android.os.Bundle;
-import android.view.View;
-import android.widget.Button;
-import android.widget.EditText;
-import android.widget.RadioButton;
-import android.widget.RadioGroup;
+import android.view.ViewGroup;
 
 import androidx.annotation.NonNull;
+import androidx.constraintlayout.widget.ConstraintLayout;
 
 import cn.edu.zust.dmt.tkm.R;
 import cn.edu.zust.dmt.tkm.interfaces.listeners.EntranceFairListener;
@@ -24,17 +21,7 @@ import cn.edu.zust.dmt.tkm.presenters.fairs.EntranceFair;
 public class EntranceActivity extends BaseActivity
         implements EntranceFairListener {
 
-    /**
-     * @description radio group to record whether use login or register
-     * method
-     */
-    private RadioGroup mStateRadioGroup;
-    private RadioButton mLoginButton;
-    private RadioButton mRegisterButton;
-
-    private EditText mPhoneNumberEditText;
-    private EditText mPasswordEditText;
-    private Button mSubmitButton;
+    private ConstraintLayout mFragmentContainer;
 
     /**
      * @param savedInstanceState get the bundle from activity onCreate
@@ -46,12 +33,7 @@ public class EntranceActivity extends BaseActivity
 
     @Override
     protected void initializeMemberVariables() {
-        mStateRadioGroup = findViewById(R.id.activityLoginStateRadioGroup);
-        mLoginButton = findViewById(R.id.activityLoginLoginRadioButton);
-        mRegisterButton = findViewById(R.id.activityLoginRegisterRadioButton);
-        mPhoneNumberEditText = findViewById(R.id.activityLoginPhoneNumberEditText);
-        mPasswordEditText = findViewById(R.id.activityLoginPasswordEditText);
-        mSubmitButton = findViewById(R.id.activityLoginSubmitButton);
+        mFragmentContainer=findViewById(R.id.activityEntranceFragmentContainerConstraintLayout);
     }
 
     @Override
@@ -61,37 +43,7 @@ public class EntranceActivity extends BaseActivity
 
     @NonNull
     @Override
-    public RadioGroup getStateRadioGroup() {
-        return mStateRadioGroup;
-    }
-
-    @NonNull
-    @Override
-    public RadioButton getLoginButton() {
-        return mLoginButton;
-    }
-
-    @NonNull
-    @Override
-    public RadioButton getRegisterButton() {
-        return mRegisterButton;
-    }
-
-    @NonNull
-    @Override
-    public EditText getPhoneNumberEditText() {
-        return mPhoneNumberEditText;
-    }
-
-    @NonNull
-    @Override
-    public EditText getPasswordEditText() {
-        return mPasswordEditText;
-    }
-
-    @NonNull
-    @Override
-    public View getSubmitTriggerView() {
-        return mSubmitButton;
+    public ViewGroup getFragmentContainer() {
+        return mFragmentContainer;
     }
 }

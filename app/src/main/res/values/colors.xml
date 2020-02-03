@@ -4,11 +4,19 @@
     <color name="colorPrimaryDark">#00574B</color>
     <color name="colorAccent">#D81B60</color>
 
+    <!--color repository-->
+    <!--Announcement:All color in repository is not supposed to be called
+                     outside this file!!!
+                     There stores the raw color values app needed-->
+    <color name="color_my_white">#FFFFFF</color>
+    <color name="color_my_black">#000000</color>
+    <color name="color_my_light_gray">#F2F2F2</color>
+
     <!--color for universe-->
     <color name="color_universe_app_theme_color">#8BC34A</color>
-    <color name="color_universe_icon">#000000</color>
-    <color name="color_universe_background">#F2F2F2</color>
-    <color name="color_universe_foreground">#FFFFFF</color>
+    <color name="color_universe_icon">@color/color_my_black</color>
+    <color name="color_universe_background">@color/color_my_light_gray</color>
+    <color name="color_universe_foreground">@color/color_my_white</color>
     <color name="color_universe_edit_text_underline_unfocused">#52979797</color>
     <color name="color_universe_text_hint">#999999</color>
     <color name="color_universe_text">#333333</color>

@@ -6,4 +6,12 @@
     <!--drawables for activity_entrance-->
     <drawable name="icon_activity_entrance_username">@drawable/icon_user</drawable>
     <drawable name="icon_activity_entrance_password">@drawable/icon_lock</drawable>
+
+    <!--drawables for fragment_login-->
+    <drawable name="icon_fragment_login_username">@drawable/icon_user</drawable>
+    <drawable name="icon_fragment_login_password">@drawable/icon_lock</drawable>
+
+    <!--drawables for fragment_register-->
+    <drawable name="icon_fragment_register_username">@drawable/icon_user</drawable>
+    <drawable name="icon_fragment_register_password">@drawable/icon_lock</drawable>
 </resources>

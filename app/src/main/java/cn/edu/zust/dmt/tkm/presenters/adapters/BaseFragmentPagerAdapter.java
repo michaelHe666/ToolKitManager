@@ -16,11 +16,11 @@ import java.util.List;
  * @time 1/17/2020 19:22
  * copyright(c) all rights reserved by MR.M
  **/
-public class MainViewPagerAdapter extends FragmentStatePagerAdapter {
+public class BaseFragmentPagerAdapter extends FragmentStatePagerAdapter {
 
     private List<Fragment> mFragmentList = new ArrayList();
 
-    public MainViewPagerAdapter(@NonNull FragmentManager fm, List<Fragment> fragmentList) {
+    public BaseFragmentPagerAdapter(@NonNull FragmentManager fm, List<Fragment> fragmentList) {
         super(fm, FragmentStatePagerAdapter.BEHAVIOR_RESUME_ONLY_CURRENT_FRAGMENT);
         mFragmentList = fragmentList;
     }

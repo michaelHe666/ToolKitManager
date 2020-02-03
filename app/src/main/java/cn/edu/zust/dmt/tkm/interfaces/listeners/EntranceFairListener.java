@@ -1,9 +1,6 @@
 package cn.edu.zust.dmt.tkm.interfaces.listeners;
 
-import android.view.View;
-import android.widget.EditText;
-import android.widget.RadioButton;
-import android.widget.RadioGroup;
+import android.view.ViewGroup;
 
 import androidx.annotation.NonNull;
 
@@ -18,38 +15,8 @@ import androidx.annotation.NonNull;
 public interface EntranceFairListener extends BaseFairListener {
 
     /**
-     * @return reference of RadioGroup to record use login or not
+     * @return viewGroup as fragment container
      */
     @NonNull
-    RadioGroup getStateRadioGroup();
-
-    /**
-     * @return reference of RadioButton of login
-     */
-    @NonNull
-    RadioButton getLoginButton();
-
-    /**
-     * @return reference of RadioButton of register
-     */
-    @NonNull
-    RadioButton getRegisterButton();
-
-    /**
-     * @return reference of editText for user to input phoneNumber
-     */
-    @NonNull
-    EditText getPhoneNumberEditText();
-
-    /**
-     * @return reference of editText for user to input password
-     */
-    @NonNull
-    EditText getPasswordEditText();
-
-    /**
-     * @return any view which can trigger login event by onClickListener
-     */
-    @NonNull
-    View getSubmitTriggerView();
+    ViewGroup getFragmentContainer();
 }
