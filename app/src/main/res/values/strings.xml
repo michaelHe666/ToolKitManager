@@ -3,8 +3,12 @@
 
     <!--universe strings-->
     <string name="string_universe_processing_bar_text_wait">加载中</string>
+    <string name="string_universe_login">登录</string>
+    <string name="string_universe_register">注册</string>
+    <string name="string_universe_voucher">凭证</string>
+    <string name="string_universe_token">令牌</string>
 
-    <!--strings for activity main-->
+    <!--strings for activity_main-->
     <string name="string_activity_main_home">我的工具夹</string>
     <string name="string_activity_main_management">工具夹管理</string>
     <string name="string_activity_main_message">我的消息</string>
@@ -14,37 +18,41 @@
     <string name="string_activity_main_message_button">消息</string>
     <string name="string_activity_main_settings_button">设置</string>
 
-    <!--strings for activity login-->
+    <!--strings for activity_login-->
     <string name="string_activity_login_text_login">登录</string>
     <string name="string_activity_login_text_register">注册</string>
     <string name="string_activity_login_text_submit">确认</string>
     <string name="string_activity_login_hint_username">请输入手机号</string>
     <string name="string_activity_login_hint_password">请输入密码</string>
 
-    <!--strings for fragment home-->
+    <!--strings for fragment_login-->
+    <string name="string_fragment_login_voucher_hint">请输入手机号</string>
+    <string name="string_fragment_login_token_hint">请输入密码</string>
+
+    <!--strings for fragment_home-->
     <string name="string_fragment_home_title_deadline">归还日期</string>
     <string name="string_fragment_home_title_position">故障率</string>
     <string name="string_fragment_home_title_risk">定位</string>
 
-    <!--strings for fragment management-->
+    <!--strings for fragment_management-->
     <string name="string_fragment_management_purchase">采购申请</string>
     <string name="string_fragment_management_in">出库申请</string>
     <string name="string_fragment_management_out">归库申请</string>
     <string name="string_fragment_management_repair">维修申请</string>
     <string name="string_fragment_management_scrap">报废申请</string>
 
-    <!--strings for fragment Message-->
+    <!--strings for fragment_Message-->
     <string name="string_fragment_Message_title_system">系统通知</string>
     <string name="string_fragment_Message_title_company">公司通知</string>
 
-    <!--strings for fragment settings-->
+    <!--strings for fragment_settings-->
     <string name="string_fragment_settings_ui">界面设置</string>
     <string name="string_fragment_settings_notification">通知设置</string>
     <string name="string_fragment_settings_security">安全设置</string>
     <string name="string_fragment_settings_update">检查更新</string>
     <string name="string_fragment_settings_contacts">联系我们</string>
 
-    <!--strings for fragment purchase-->
+    <!--strings for fragment_purchase-->
     <string name="string_fragment_purchase_title_name">申请人</string>
     <string name="string_fragment_purchase_title_tool_name">物品名称</string>
     <string name="string_fragment_purchase_title_tool_price">物品价格</string>
@@ -56,7 +64,7 @@
     <string name="string_fragment_purchase_title_tool_price_hint">请输入物品价格（人民币）</string>
     <string name="string_fragment_purchase_title_reason_hint">请输入申请原因</string>
 
-    <!--strings for fragment bottom_date_picker-->
+    <!--strings for fragment_bottom_date_picker-->
     <string name="string_fragment_bottom_date_picker_title_sure">确认</string>
     <string name="string_fragment_bottom_date_picker_title_cancel">取消</string>
 

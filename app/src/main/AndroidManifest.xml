@@ -14,11 +14,8 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
 
-        <activity android:name=".views.activities.MainActivity"
-            android:launchMode="singleTask"
-            android:windowSoftInputMode="stateAlwaysHidden|adjustNothing"/>
-
         <activity android:name=".views.activities.EntranceActivity"
+            android:launchMode="singleTop"
             android:noHistory="true"
             android:windowSoftInputMode="stateAlwaysHidden|adjustResize">
             <intent-filter>
@@ -27,6 +24,10 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+
+        <activity android:name=".views.activities.MainActivity"
+            android:launchMode="singleTask"
+            android:windowSoftInputMode="stateAlwaysHidden|adjustNothing"/>
 
         <activity android:name=".views.activities.TopBarActivity"
             android:launchMode="standard"

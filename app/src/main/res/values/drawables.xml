@@ -1,5 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?>
-<!--Announcement:This file records alias-names for default drawable resources.
+<?xml version="1.0" encoding="utf-8"?><!--Announcement:This file records alias-names for default drawable resources.
                  All default drawable resources name shall be announced as
                  alias-name in this file to act as middleware-->
 <resources>
@@ -7,9 +6,8 @@
     <drawable name="icon_activity_entrance_username">@drawable/icon_user</drawable>
     <drawable name="icon_activity_entrance_password">@drawable/icon_lock</drawable>
 
-    <!--drawables for fragment_login-->
-    <drawable name="icon_fragment_login_username">@drawable/icon_user</drawable>
-    <drawable name="icon_fragment_login_password">@drawable/icon_lock</drawable>
+    <!--drawables for fragment_gate-->
+    <drawable name="icon_fragment_gate_background">@drawable/star_cloud</drawable>
 
     <!--drawables for fragment_register-->
     <drawable name="icon_fragment_register_username">@drawable/icon_user</drawable>

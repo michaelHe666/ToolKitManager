@@ -5,13 +5,13 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
-import android.widget.EditText;
 
 import androidx.annotation.NonNull;
 
 import cn.edu.zust.dmt.tkm.R;
 import cn.edu.zust.dmt.tkm.interfaces.listeners.LoginFairListener;
 import cn.edu.zust.dmt.tkm.presenters.fairs.LoginFair;
+import cn.edu.zust.dmt.tkm.views.widgets.combined.MyFormBar;
 
 /**
  * @author MR.M
@@ -24,10 +24,10 @@ import cn.edu.zust.dmt.tkm.presenters.fairs.LoginFair;
 public class LoginFragment extends BaseFragment
         implements LoginFairListener {
 
-    private EditText mPhoneNumberEditText;
-    private EditText mPasswordEditText;
+    private MyFormBar mVoucherNameEditText;
+    private MyFormBar mVoucherTokenEditText;
     private Button mSubmitButton;
-    private Button mFindPasswordButton;
+    private Button mFindVoucherButton;
 
     @Override
     protected final View LoadFragmentView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
@@ -36,10 +36,10 @@ public class LoginFragment extends BaseFragment
 
     @Override
     protected final void initializeMemberVariables(View contentView) {
-        mPhoneNumberEditText = contentView.findViewById(R.id.fragmentLoginPhoneNumberEditText);
-        mPasswordEditText = contentView.findViewById(R.id.fragmentLoginPasswordEditText);
+        mVoucherNameEditText = contentView.findViewById(R.id.fragmentLoginVoucherNameMyFormBar);
+        mVoucherTokenEditText = contentView.findViewById(R.id.fragmentLoginVoucherTokenMyFormBar);
         mSubmitButton = contentView.findViewById(R.id.fragmentLoginSubmitButton);
-        mFindPasswordButton = contentView.findViewById(R.id.fragmentLoginFindPasswordButton);
+        mFindVoucherButton = contentView.findViewById(R.id.fragmentLoginFindVoucherButton);
     }
 
     @Override
@@ -49,14 +49,14 @@ public class LoginFragment extends BaseFragment
 
     @NonNull
     @Override
-    public final EditText getPhoneNumberEditText() {
-        return mPhoneNumberEditText;
+    public final MyFormBar getVoucherNameMyFormBar() {
+        return mVoucherNameEditText;
     }
 
     @NonNull
     @Override
-    public final EditText getPasswordEditText() {
-        return mPasswordEditText;
+    public final MyFormBar getVoucherTokenMyFormBar() {
+        return mVoucherTokenEditText;
     }
 
     @NonNull
@@ -67,7 +67,7 @@ public class LoginFragment extends BaseFragment
 
     @NonNull
     @Override
-    public final View getFindPasswordTriggerView() {
-        return mFindPasswordButton;
+    public final View getFindVoucherTriggerView() {
+        return mFindVoucherButton;
     }
 }

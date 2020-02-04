@@ -1,9 +1,12 @@
 package cn.edu.zust.dmt.tkm.interfaces.listeners;
 
+import android.view.View;
+
 import androidx.annotation.NonNull;
 
 import cn.edu.zust.dmt.tkm.interfaces.BaseActivityFragmentMethodsInterface;
 import cn.edu.zust.dmt.tkm.interfaces.BaseActivityStartMethodsInterface;
+import cn.edu.zust.dmt.tkm.interfaces.BaseNewIntentInterface;
 import cn.edu.zust.dmt.tkm.interfaces.BaseThreadCallbackInterface;
 
 /**
@@ -16,8 +19,15 @@ import cn.edu.zust.dmt.tkm.interfaces.BaseThreadCallbackInterface;
  **/
 public interface BaseFairListener {
 
+    /**
+     * @description show loading progress full dialog to forbid screen
+     * operation
+     */
     void showLoadingProgress();
 
+    /**
+     * @description hide loading progress to allow screen operation
+     */
     void hideLoadingProgress();
 
     /**
@@ -36,9 +46,19 @@ public interface BaseFairListener {
     void catchBasicFailure(int returnCode, @NonNull String prompt);
 
     /**
+     * @param view target view to extend top to screen-top
+     */
+    void setImmersiveTopView(@NonNull View view);
+
+    /**
      * @param baseThreadCallback callback method provider
      */
-    void setBaseThreadCallback(BaseThreadCallbackInterface baseThreadCallback);
+    void setBaseThreadCallback(@NonNull BaseThreadCallbackInterface baseThreadCallback);
+
+    /**
+     * @param baseNewIntentInterface store methods for new intent
+     */
+    void setNewIntentMethods(@NonNull BaseNewIntentInterface baseNewIntentInterface);
 
     /**
      * @return interface transfer activity start method

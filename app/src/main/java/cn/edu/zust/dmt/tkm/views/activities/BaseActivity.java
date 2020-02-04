@@ -2,10 +2,15 @@ package cn.edu.zust.dmt.tkm.views.activities;
 
 import android.content.Intent;
 import android.content.pm.ActivityInfo;
+import android.graphics.Color;
 import android.os.Bundle;
 import android.text.TextUtils;
+import android.util.DisplayMetrics;
 import android.view.Gravity;
 import android.view.KeyEvent;
+import android.view.View;
+import android.view.ViewGroup;
+import android.view.Window;
 import android.view.WindowManager;
 
 import androidx.annotation.NonNull;
@@ -18,10 +23,11 @@ import org.jetbrains.annotations.NotNull;
 import cn.edu.zust.dmt.tkm.R;
 import cn.edu.zust.dmt.tkm.interfaces.BaseActivityFragmentMethodsInterface;
 import cn.edu.zust.dmt.tkm.interfaces.BaseActivityStartMethodsInterface;
+import cn.edu.zust.dmt.tkm.interfaces.BaseNewIntentInterface;
 import cn.edu.zust.dmt.tkm.interfaces.BaseThreadCallbackInterface;
-import cn.edu.zust.dmt.tkm.presenters.helpers.ToastHelper;
 import cn.edu.zust.dmt.tkm.interfaces.listeners.BaseFairListener;
 import cn.edu.zust.dmt.tkm.presenters.fairs.BaseFair;
+import cn.edu.zust.dmt.tkm.presenters.helpers.ToastHelper;
 import cn.edu.zust.dmt.tkm.presenters.tools.BaseActivityStackManager;
 
 /**
@@ -50,7 +56,12 @@ public abstract class BaseActivity extends AppCompatActivity
     /**
      * @description store callback method
      */
-    protected BaseThreadCallbackInterface mBaseThreadCallbackInterface;
+    private BaseThreadCallbackInterface mBaseThreadCallbackInterface;
+
+    /**
+     * @description store methods for new intent
+     */
+    private BaseNewIntentInterface mBaseNewIntentInterface = null;
 
     /**
      * @description activity initializer
@@ -62,11 +73,18 @@ public abstract class BaseActivity extends AppCompatActivity
         //todo:get activityManager apart
         BaseActivityStackManager.addBaseActivity(this);
 
-        //todo:add base fair
-        BaseFair.loadFair(this);
+        Window window = getWindow();
+        window.clearFlags(WindowManager.LayoutParams.FLAG_TRANSLUCENT_STATUS);
+        window.getDecorView().setSystemUiVisibility(View.SYSTEM_UI_FLAG_LAYOUT_FULLSCREEN
+                | View.SYSTEM_UI_FLAG_LAYOUT_STABLE);
+        window.addFlags(WindowManager.LayoutParams.FLAG_DRAWS_SYSTEM_BAR_BACKGROUNDS);
+        window.setStatusBarColor(Color.TRANSPARENT);
 
         //set screen orientation
         setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_PORTRAIT);
+
+        //todo:add base fair
+        BaseFair.loadFair(this);
 
         loadActivityView(savedInstanceState);
         initializeMemberVariables();
@@ -90,6 +108,14 @@ public abstract class BaseActivity extends AppCompatActivity
             BaseActivityStackManager.finishBaseActivity(this);
         }
         return super.onKeyDown(keyCode, event);
+    }
+
+    @Override
+    protected final void onNewIntent(Intent intent) {
+        super.onNewIntent(intent);
+        if (mBaseNewIntentInterface != null && intent != null) {
+            mBaseNewIntentInterface.parseNewIntent(intent);
+        }
     }
 
     /**
@@ -185,12 +211,32 @@ public abstract class BaseActivity extends AppCompatActivity
         }
     }
 
+    @Override
+    public void setImmersiveTopView(@NonNull View view) {
+        int topBarHeight = this.getResources().getDimensionPixelSize(getResources().getIdentifier("status_bar_height", "dimen", "android"));
+        ViewGroup.LayoutParams layoutParams = view.getLayoutParams();
+        DisplayMetrics displayMetrics = new DisplayMetrics();
+        getWindowManager().getDefaultDisplay().getMetrics(displayMetrics);
+        layoutParams.height = displayMetrics.widthPixels / 9 + topBarHeight;
+        layoutParams.width = displayMetrics.widthPixels;
+        view.setLayoutParams(layoutParams);
+        view.setPadding(0, topBarHeight, 0, 0);
+    }
+
     /**
      * @param baseThreadCallback callback method provider
      */
     @Override
-    public void setBaseThreadCallback(BaseThreadCallbackInterface baseThreadCallback) {
+    public final void setBaseThreadCallback(@NotNull BaseThreadCallbackInterface baseThreadCallback) {
         this.mBaseThreadCallbackInterface = baseThreadCallback;
+    }
+
+    /**
+     * @param baseNewIntentInterface store methods for new intent
+     */
+    @Override
+    public final void setNewIntentMethods(@NonNull BaseNewIntentInterface baseNewIntentInterface) {
+        this.mBaseNewIntentInterface = baseNewIntentInterface;
     }
 
     @NonNull

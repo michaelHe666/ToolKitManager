@@ -1,8 +1,13 @@
 package cn.edu.zust.dmt.tkm.presenters.fairs;
 
+import android.content.Intent;
+
 import androidx.annotation.NonNull;
 
+import cn.edu.zust.dmt.tkm.R;
+import cn.edu.zust.dmt.tkm.interfaces.BaseNewIntentInterface;
 import cn.edu.zust.dmt.tkm.interfaces.listeners.EntranceFairListener;
+import cn.edu.zust.dmt.tkm.views.fragments.GateFragment;
 import cn.edu.zust.dmt.tkm.views.fragments.LoginFragment;
 
 /**
@@ -31,16 +36,50 @@ public class EntranceFair {
         if (INSTANCE == null) {
             INSTANCE = new EntranceFair();
         }
-        //todo:INSTANCE副本调用接口空指针异常，静态方法内局部变量副本持有方法？
+        //todo:INSTANCE副本调用接口空指针异常，静态方法内INSTANCE副本是否持有方法？
         INSTANCE.mCurrentListener = entranceFairListener;
-        INSTANCE.loadLoginFragment();
+        INSTANCE.parseIntent();
+        INSTANCE.setNewIntentMethods();
         //todo:执行INSTANCE.mCurrentListener=null后startLogin抛出空指针异常
     }
 
-    private void loadLoginFragment(){
+    private void parseIntent() {
+        Intent intent = mCurrentListener.getIntentToEntrance();
+        if (intent.getAction() != null) {
+            if (intent.getAction().equals(Intent.ACTION_MAIN)) {
+                loadGateFragment();
+            }
+        }
+    }
+
+    private void setNewIntentMethods() {
+        mCurrentListener.setNewIntentMethods(new BaseNewIntentInterface() {
+            @Override
+            public void parseNewIntent(@NonNull Intent intent) {
+                if (intent.getStringExtra("target") != null) {
+                    String string = intent.getStringExtra("target");
+                    if (string.equals("login")) {
+                        loadLoginFragment();
+                    }
+                }
+            }
+        });
+    }
+
+    private void loadGateFragment() {
         mCurrentListener.getFragmentManagerMethods().getMyFragmentManager()
                 .beginTransaction()
-                .replace(mCurrentListener.getFragmentContainer().getId(),new LoginFragment())
+                .replace(mCurrentListener.getFragmentContainer().getId(), new GateFragment())
+                .commit();
+    }
+
+    private void loadLoginFragment() {
+        mCurrentListener.getFragmentManagerMethods().getMyFragmentManager()
+                .beginTransaction()
+                .setCustomAnimations(
+                        R.anim.right_screen_in, R.anim.left_screen_out
+                )
+                .replace(mCurrentListener.getFragmentContainer().getId(), new LoginFragment())
                 .commit();
     }
 }

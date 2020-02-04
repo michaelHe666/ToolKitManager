@@ -2,11 +2,11 @@
 <resources>
 
     <declare-styleable name="MyTopBar">
-        <attr name="title" format="string"/>
-        <attr name="leftIcon" format="reference"/>
-        <attr name="showLeftIcon" format="boolean"/>
-        <attr name="rightIcon" format="reference"/>
-        <attr name="showRightIcon" format="boolean"/>
+        <attr name="myTopBarTitle" format="string"/>
+        <attr name="myTopBarLeftIcon" format="reference"/>
+        <attr name="myTopBarShowLeftIcon" format="boolean"/>
+        <attr name="myTopBarRightIcon" format="reference"/>
+        <attr name="myTopBarShowRightIcon" format="boolean"/>
     </declare-styleable>
 
     <declare-styleable name="MyOptionCard">
@@ -29,5 +29,6 @@
     <declare-styleable name="MyFormBar">
         <attr name="myFormBarTitle" format="string"/>
         <attr name="myFormBarHint" format="string"/>
+        <attr name="myFormBarTextSize" format="dimension"/>
     </declare-styleable>
 </resources>

@@ -34,12 +34,12 @@ public class MainActivity extends BaseActivity
     private ImageButton mSettingsButton;
 
     @Override
-    protected void loadActivityView(Bundle savedInstanceState) {
+    protected final void loadActivityView(Bundle savedInstanceState) {
         setContentView(R.layout.activity_main);
     }
 
     @Override
-    protected void initializeMemberVariables() {
+    protected final void initializeMemberVariables() {
         mMyTopBar = findViewById(R.id.activityMainMyTopBar);
         mViewPager = findViewById(R.id.activityMainContainerViewPager);
         mHomeButton = findViewById(R.id.activityMainHomeImageButton);
@@ -49,12 +49,12 @@ public class MainActivity extends BaseActivity
     }
 
     @Override
-    protected void bindDataToView() {
+    protected final void bindDataToView() {
         MainFair.loadFair(this);
     }
 
     @Override
-    public void hideTopBarRightButton() {
+    public final void hideTopBarRightButton() {
         mMyTopBar.hideRightButton();
     }
 
@@ -62,7 +62,7 @@ public class MainActivity extends BaseActivity
      * @param drawableRID show topBar right button by drawableRID
      */
     @Override
-    public void showTopBarRightButton(int drawableRID) {
+    public final void showTopBarRightButton(int drawableRID) {
         mMyTopBar.showRightButton(drawableRID);
     }
 
@@ -70,43 +70,43 @@ public class MainActivity extends BaseActivity
      * @param stringRID set topBar title by string RID
      */
     @Override
-    public void setTopBarTitle(int stringRID) {
+    public final void setTopBarTitle(int stringRID) {
         mMyTopBar.setTitle(stringRID);
     }
 
     @NotNull
     @Override
-    public Intent getIntentToMain() {
+    public final Intent getIntentToMain() {
         return this.getIntent();
     }
 
     @NotNull
     @Override
-    public ViewPager getMainViewPager() {
+    public final ViewPager getMainViewPager() {
         return mViewPager;
     }
 
     @NonNull
     @Override
-    public View getHomeTriggerView() {
+    public final View getHomeTriggerView() {
         return mHomeButton;
     }
 
     @NonNull
     @Override
-    public View getManagementTriggerView() {
+    public final View getManagementTriggerView() {
         return mManagementButton;
     }
 
     @NonNull
     @Override
-    public View getMessageTriggerView() {
+    public final View getMessageTriggerView() {
         return mMessageButton;
     }
 
     @NonNull
     @Override
-    public View getSettingsTriggerView() {
+    public final View getSettingsTriggerView() {
         return mSettingsButton;
     }
 }

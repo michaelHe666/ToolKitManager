@@ -64,8 +64,8 @@ public class LoginFair {
     private void startLogin() {
         mCurrentListener.showLoadingProgress();
         String postParamsString = (new Gson()).toJson(new PostLoginRequestModel(
-                mCurrentListener.getPhoneNumberEditText().getText().toString(),
-                mCurrentListener.getPasswordEditText().getText().toString()));
+                mCurrentListener.getVoucherNameMyFormBar().getText().toString(),
+                mCurrentListener.getVoucherTokenMyFormBar().getText().toString()));
         mCurrentListener.setBaseThreadCallback(new BaseThreadCallbackInterface() {
             @Override
             public void getThreadCallback(@NonNull Object obj) {

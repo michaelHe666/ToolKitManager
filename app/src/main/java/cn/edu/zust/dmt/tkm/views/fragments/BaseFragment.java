@@ -14,6 +14,7 @@ import org.jetbrains.annotations.NotNull;
 
 import cn.edu.zust.dmt.tkm.interfaces.BaseActivityFragmentMethodsInterface;
 import cn.edu.zust.dmt.tkm.interfaces.BaseActivityStartMethodsInterface;
+import cn.edu.zust.dmt.tkm.interfaces.BaseNewIntentInterface;
 import cn.edu.zust.dmt.tkm.interfaces.BaseThreadCallbackInterface;
 import cn.edu.zust.dmt.tkm.views.activities.BaseActivity;
 import cn.edu.zust.dmt.tkm.interfaces.listeners.BaseFairListener;
@@ -100,8 +101,18 @@ public abstract class BaseFragment extends Fragment
     }
 
     @Override
-    public final void setBaseThreadCallback(BaseThreadCallbackInterface baseThreadCallback) {
+    public void setImmersiveTopView(@NonNull View view) {
+        myParentActivity.setImmersiveTopView(view);
+    }
+
+    @Override
+    public final void setBaseThreadCallback(@NotNull BaseThreadCallbackInterface baseThreadCallback) {
         this.mBaseThreadCallbackInterface = baseThreadCallback;
+    }
+
+    @Override
+    public final void setNewIntentMethods(@NonNull BaseNewIntentInterface baseNewIntentInterface) {
+        myParentActivity.setNewIntentMethods(baseNewIntentInterface);
     }
 
     @NonNull

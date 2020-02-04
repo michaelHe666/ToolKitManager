@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- universe dimens -->
+    <dimen name="dimen_universe_form_margin_top">20dp</dimen>
+    <dimen name="dimen_universe_form_margin_item">4dp</dimen>
+    <dimen name="dimen_universe_font_standard">18sp</dimen>
+</resources>

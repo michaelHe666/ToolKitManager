@@ -5,6 +5,8 @@ import android.widget.EditText;
 
 import androidx.annotation.NonNull;
 
+import cn.edu.zust.dmt.tkm.views.widgets.combined.MyFormBar;
+
 /**
  * @author MR.M
  * @projectName tkm
@@ -19,13 +21,13 @@ public interface LoginFairListener extends BaseFairListener {
      * @return reference of editText for user to input phoneNumber
      */
     @NonNull
-    EditText getPhoneNumberEditText();
+    MyFormBar getVoucherNameMyFormBar();
 
     /**
      * @return reference of editText for user to input password
      */
     @NonNull
-    EditText getPasswordEditText();
+    MyFormBar getVoucherTokenMyFormBar();
 
     /**
      * @return any view which can trigger login event by onClickListener
@@ -38,5 +40,5 @@ public interface LoginFairListener extends BaseFairListener {
      *         by onClickListener
      */
     @NonNull
-    View getFindPasswordTriggerView();
+    View getFindVoucherTriggerView();
 }

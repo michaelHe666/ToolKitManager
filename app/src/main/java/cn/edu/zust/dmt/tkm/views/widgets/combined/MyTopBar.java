@@ -2,6 +2,7 @@ package cn.edu.zust.dmt.tkm.views.widgets.combined;
 
 import android.content.Context;
 import android.content.res.TypedArray;
+import android.text.TextUtils;
 import android.util.AttributeSet;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -27,11 +28,11 @@ public class MyTopBar extends ConstraintLayout {
     /**
      * @description attributes
      */
-    private String mTitleString;
-    private int mRightButtonRID;
-    private Boolean isRightButtonShown;
-    private int mLeftButtonRID;
-    private Boolean isLeftButtonShown;
+    private String mTitleString = "";
+    private int mRightButtonRID = 0;
+    private Boolean isRightButtonShown = false;
+    private int mLeftButtonRID = 0;
+    private Boolean isLeftButtonShown = false;
 
     public MyTopBar(Context context, AttributeSet attrs) {
         super(context, attrs);
@@ -54,25 +55,28 @@ public class MyTopBar extends ConstraintLayout {
      */
     private void initializeViews(Context context, AttributeSet attributeSet) {
         TypedArray typedArray = context.obtainStyledAttributes(attributeSet, R.styleable.MyTopBar);
-        mTitleString = typedArray.getString(R.styleable.MyTopBar_title);
-        mLeftButtonRID = typedArray.getResourceId(R.styleable.MyTopBar_leftIcon, 0);
-        isLeftButtonShown = typedArray.getBoolean(R.styleable.MyTopBar_showLeftIcon, false);
-        mRightButtonRID = typedArray.getResourceId(R.styleable.MyTopBar_rightIcon, 0);
-        isRightButtonShown = typedArray.getBoolean(R.styleable.MyTopBar_showRightIcon, false);
+        mTitleString = typedArray.getString(R.styleable.MyTopBar_myTopBarTitle);
+        mLeftButtonRID = typedArray.getResourceId(R.styleable.MyTopBar_myTopBarLeftIcon, mLeftButtonRID);
+        isLeftButtonShown = typedArray.getBoolean(R.styleable.MyTopBar_myTopBarShowLeftIcon, isLeftButtonShown);
+        mRightButtonRID = typedArray.getResourceId(R.styleable.MyTopBar_myTopBarRightIcon, mRightButtonRID);
+        isRightButtonShown = typedArray.getBoolean(R.styleable.MyTopBar_myTopBarShowRightIcon, isRightButtonShown);
 
         if (!isRightButtonShown) {
             mRightButton.setVisibility(View.GONE);
-        } else {
+        }
+        if (mRightButtonRID != 0) {
             mRightButton.setImageDrawable(getResources().getDrawable(mRightButtonRID));
         }
-
         if (!isLeftButtonShown) {
             mLeftButton.setVisibility(View.GONE);
-        } else {
-            mRightButton.setImageDrawable(getResources().getDrawable(mLeftButtonRID));
+        }
+        if (mLeftButtonRID != 0) {
+            mLeftButton.setImageDrawable(getResources().getDrawable(mLeftButtonRID));
+        }
+        if (!TextUtils.isEmpty(mTitleString)) {
+            mCenterTextView.setText(mTitleString);
         }
 
-        mCenterTextView.setText(mTitleString);
         typedArray.recycle();
     }
 
@@ -120,7 +124,17 @@ public class MyTopBar extends ConstraintLayout {
         mRightButton.setVisibility(View.GONE);
     }
 
+    /**
+     * @param stringRID resources id for title string
+     */
     public void setTitle(int stringRID) {
         mCenterTextView.setText(getResources().getString(stringRID));
+    }
+
+    /**
+     * @param string resources id for title string
+     */
+    public void setTitle(String string) {
+        mCenterTextView.setText(string);
     }
 }

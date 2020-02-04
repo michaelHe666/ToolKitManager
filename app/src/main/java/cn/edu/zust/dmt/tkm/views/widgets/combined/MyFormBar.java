@@ -2,7 +2,9 @@ package cn.edu.zust.dmt.tkm.views.widgets.combined;
 
 import android.content.Context;
 import android.content.res.TypedArray;
+import android.text.Editable;
 import android.util.AttributeSet;
+import android.util.TypedValue;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.widget.EditText;
@@ -27,6 +29,7 @@ public class MyFormBar extends ConstraintLayout {
      */
     private TextView mTextView;
     private EditText mEditText;
+    private int mTextSize = 40;
 
     /**
      * @description attributes
@@ -56,14 +59,21 @@ public class MyFormBar extends ConstraintLayout {
         TypedArray typedArray = context.obtainStyledAttributes(attributeSet, R.styleable.MyFormBar);
         mTitleString = typedArray.getString(R.styleable.MyFormBar_myFormBarTitle);
         mHintString = typedArray.getString(R.styleable.MyFormBar_myFormBarHint);
+        mTextSize = typedArray.getDimensionPixelSize(R.styleable.MyFormBar_myFormBarTextSize, mTextSize);
 
         mTextView.setText(mTitleString);
         mEditText.setHint(mHintString);
+        mTextView.setTextSize(TypedValue.COMPLEX_UNIT_PX, mTextSize);
+        mEditText.setTextSize(TypedValue.COMPLEX_UNIT_PX, mTextSize);
         typedArray.recycle();
     }
 
     public void setEditTextOnClickListener(OnClickListener onClickListener) {
         mEditText.setOnClickListener(onClickListener);
+    }
+
+    public Editable getText() {
+        return mEditText.getText();
     }
 
     public void setContentText(String content) {

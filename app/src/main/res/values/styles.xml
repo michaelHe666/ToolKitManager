@@ -1,18 +1,24 @@
 <resources>
 
     <!-- Base application theme. -->
-    <style name="AppTheme" parent="Theme.AppCompat.Light">
+    <style name="AppTheme" parent="Theme.AppCompat.Light.NoActionBar">
         <!-- Customize your theme here. -->
-        <item name="android:fitsSystemWindows">true</item>
-        <item name="windowActionBar">false</item>
-        <item name="windowNoTitle">true</item>
-
-        <item name="colorPrimary">@color/colorPrimary</item>
-        <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
-        <item name="colorAccent">@color/colorAccent</item>
+        <!-- Comments of michaelHe:
+             Cause of android system different versions,this one is actually
+             nothing.People design it for convenience but now useless.-->
     </style>
 
     <!--universe styles-->
+    <style name="style_universe_button">
+        <item name="android:stateListAnimator">@null</item>
+        <item name="android:minHeight">0dp</item>
+        <item name="android:minWidth">0dp</item>
+        <item name="android:padding">8dp</item>
+        <item name="android:singleLine">true</item>
+        <item name="android:ellipsize">end</item>
+        <item name="android:textSize">18sp</item>
+        <item name="android:gravity">center</item>
+    </style>
     <style name="style_universe_processing_dialog_text">
         <item name="android:includeFontPadding">false</item>
         <item name="android:gravity">center</item>
@@ -31,7 +37,7 @@
         <item name="android:textColor">#FFFFFF</item>
     </style>
 
-    <!--style for activity main-->
+    <!--style for activity_main-->
     <style name="style_activity_main_bottom_bar_text">
         <item name="android:gravity">center</item>
         <item name="android:textSize">10sp</item>
@@ -40,7 +46,7 @@
         <item name="android:padding">0dp</item>
     </style>
 
-    <!--style for fragment settings-->
+    <!--style for fragment_settings-->
     <style name="style_fragment_settings_options_title">
         <item name="android:gravity">center</item>
         <item name="android:textSize">16sp</item>
@@ -57,57 +63,57 @@
         <item name="android:textColor">@color/color_universe_app_theme_color</item>
     </style>
 
-    <!--style for views MyTopBar-->
+    <!--style for views_MyTopBar-->
     <style name="style_views_my_top_bar_title">
         <item name="android:gravity">center</item>
         <item name="android:textSize">18sp</item>
         <item name="android:textColor">@color/color_universe_text_title</item>
     </style>
 
-    <!--style for views MyOptionCard-->
+    <!--style for views_MyOptionCard-->
     <style name="style_views_my_option_card_title">
         <item name="android:gravity">center</item>
         <item name="android:textSize">18sp</item>
         <item name="android:textColor">@color/color_universe_foreground</item>
     </style>
 
-    <!--style for views MyToolKitCard-->
+    <!--style for views_MyToolKitCard-->
     <style name="style_views_my_tk_card_title">
         <item name="android:gravity">center</item>
         <item name="android:textSize">18sp</item>
         <item name="android:textColor">@color/color_universe_text_title</item>
     </style>
+
     <style name="style_views_my_tk_card_subtitle">
         <item name="android:gravity">center</item>
         <item name="android:textSize">16sp</item>
         <item name="android:textColor">@color/color_universe_text_title</item>
     </style>
 
-    <!--style for views MyMessageBar-->
+    <!--style for views_MyMessageBar-->
     <style name="style_views_my_message_bar_title">
         <item name="android:gravity">center</item>
         <item name="android:padding">0dp</item>
         <item name="android:textSize">18sp</item>
     </style>
 
-    <!--style for views MyMenuBar-->
+    <!--style for views_MyMenuBar-->
     <style name="style_views_my_menu_bar_title">
         <item name="android:gravity">center</item>
         <item name="android:textSize">16sp</item>
     </style>
 
-    <!--style for views MyFormBar-->
+    <!--style for views_MyFormBar-->
     <style name="style_views_my_form_title">
         <item name="android:layout_margin">0dp</item>
         <item name="android:padding">0dp</item>
         <item name="android:gravity">center</item>
-        <item name="android:textSize">16sp</item>
         <item name="android:textColor">@color/color_universe_text_title</item>
     </style>
+
     <style name="style_views_my_form_input">
         <item name="android:layout_margin">0dp</item>
         <item name="android:padding">0dp</item>
-        <item name="android:textSize">16sp</item>
         <item name="android:textColor">@color/color_universe_text</item>
         <item name="android:textColorHint">@color/color_universe_text_hint</item>
         <item name="android:background">#00000000</item>

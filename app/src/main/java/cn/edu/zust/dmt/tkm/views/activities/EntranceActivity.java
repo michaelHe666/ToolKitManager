@@ -1,5 +1,6 @@
 package cn.edu.zust.dmt.tkm.views.activities;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.ViewGroup;
 
@@ -27,23 +28,29 @@ public class EntranceActivity extends BaseActivity
      * @param savedInstanceState get the bundle from activity onCreate
      */
     @Override
-    protected void loadActivityView(Bundle savedInstanceState) {
+    protected final void loadActivityView(Bundle savedInstanceState) {
         setContentView(R.layout.activity_entrance);
     }
 
     @Override
-    protected void initializeMemberVariables() {
-        mFragmentContainer=findViewById(R.id.activityEntranceFragmentContainerConstraintLayout);
+    protected final void initializeMemberVariables() {
+        mFragmentContainer = findViewById(R.id.activityEntranceFragmentContainerFrameLayout);
     }
 
     @Override
-    protected void bindDataToView() {
+    protected final void bindDataToView() {
         EntranceFair.loadFair(this);
     }
 
     @NonNull
     @Override
-    public ViewGroup getFragmentContainer() {
+    public final Intent getIntentToEntrance() {
+        return this.getIntent();
+    }
+
+    @NonNull
+    @Override
+    public final ViewGroup getFragmentContainer() {
         return mFragmentContainer;
     }
 }
