@@ -1,7 +1,6 @@
 package cn.edu.zust.dmt.tkm.interfaces.listeners;
 
 import android.view.View;
-import android.widget.EditText;
 
 import androidx.annotation.NonNull;
 
@@ -16,6 +15,12 @@ import cn.edu.zust.dmt.tkm.views.widgets.combined.MyFormBar;
  * copyright(c) all rights reserved by MR.M
  **/
 public interface LoginFairListener extends BaseFairListener {
+
+    /**
+     * @return view which will extends height to system status bar
+     */
+    @NonNull
+    View getImmersiveTopView();
 
     /**
      * @return reference of editText for user to input phoneNumber

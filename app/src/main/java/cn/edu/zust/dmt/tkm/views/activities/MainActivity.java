@@ -6,7 +6,7 @@ import android.view.View;
 import android.widget.ImageButton;
 
 import androidx.annotation.NonNull;
-import androidx.viewpager.widget.ViewPager;
+import androidx.viewpager2.widget.ViewPager2;
 
 import org.jetbrains.annotations.NotNull;
 
@@ -26,8 +26,8 @@ import cn.edu.zust.dmt.tkm.views.widgets.combined.MyTopBar;
 public class MainActivity extends BaseActivity
         implements MainFairListener {
 
-    private MyTopBar mMyTopBar;
-    private ViewPager mViewPager;
+    private MyTopBar mTopBar;
+    private ViewPager2 mViewPager2;
     private ImageButton mHomeButton;
     private ImageButton mManagementButton;
     private ImageButton mMessageButton;
@@ -40,8 +40,8 @@ public class MainActivity extends BaseActivity
 
     @Override
     protected final void initializeMemberVariables() {
-        mMyTopBar = findViewById(R.id.activityMainMyTopBar);
-        mViewPager = findViewById(R.id.activityMainContainerViewPager);
+        mTopBar = findViewById(R.id.activityMainMyTopBar);
+        mViewPager2 = findViewById(R.id.activityMainContainerViewPager2);
         mHomeButton = findViewById(R.id.activityMainHomeImageButton);
         mManagementButton = findViewById(R.id.activityMainManagementImageButton);
         mMessageButton = findViewById(R.id.activityMainMessageImageButton);
@@ -53,25 +53,10 @@ public class MainActivity extends BaseActivity
         MainFair.loadFair(this);
     }
 
+    @NonNull
     @Override
-    public final void hideTopBarRightButton() {
-        mMyTopBar.hideRightButton();
-    }
-
-    /**
-     * @param drawableRID show topBar right button by drawableRID
-     */
-    @Override
-    public final void showTopBarRightButton(int drawableRID) {
-        mMyTopBar.showRightButton(drawableRID);
-    }
-
-    /**
-     * @param stringRID set topBar title by string RID
-     */
-    @Override
-    public final void setTopBarTitle(int stringRID) {
-        mMyTopBar.setTitle(stringRID);
+    public MyTopBar getMyTopBar() {
+        return mTopBar;
     }
 
     @NotNull
@@ -82,8 +67,8 @@ public class MainActivity extends BaseActivity
 
     @NotNull
     @Override
-    public final ViewPager getMainViewPager() {
-        return mViewPager;
+    public final ViewPager2 getMainViewPager2() {
+        return mViewPager2;
     }
 
     @NonNull

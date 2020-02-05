@@ -2,7 +2,6 @@
 <ScrollView
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:fillViewport="true">
@@ -11,6 +10,60 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:background="@color/color_universe_background">
+
+        <cn.edu.zust.dmt.tkm.views.widgets.combined.MyTopBar
+            android:id="@+id/fragmentFindVoucherMyTopBar"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintDimensionRatio="9:1"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:background="@color/color_universe_foreground"
+            app:myTopBarTitle="@string/string_universe_find_voucher"
+            app:myTopBarShowLeftIcon="true"
+            app:myTopBarLeftIcon="@drawable/icon_universe_back"/>
+
+        <cn.edu.zust.dmt.tkm.views.widgets.combined.MyFormBar
+            android:id="@+id/fragmentFindVoucherVoucherNameMyFormBar"
+            app:layout_constraintTop_toBottomOf="@id/fragmentFindVoucherMyTopBar"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintDimensionRatio="17:2"
+            android:layout_marginTop="@dimen/dimen_universe_form_margin_top"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            app:myFormBarTextSize="@dimen/dimen_universe_font_standard"
+            app:myFormBarTitle="@string/string_universe_voucher"
+            app:myFormBarHint="@string/string_fragment_register_voucher_hint"/>
+
+        <cn.edu.zust.dmt.tkm.views.widgets.combined.MyFormBar
+            android:id="@+id/fragmentFindVoucherVoucherTokenMyFormBar"
+            app:layout_constraintTop_toBottomOf="@id/fragmentFindVoucherVoucherNameMyFormBar"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintDimensionRatio="17:2"
+            android:layout_marginTop="@dimen/dimen_universe_form_margin_item"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            app:myFormBarTextSize="@dimen/dimen_universe_font_standard"
+            app:myFormBarTitle="@string/string_universe_token"
+            app:myFormBarHint="@string/string_fragment_register_token_hint"/>
+
+        <Button
+            android:id="@+id/fragmentFindVoucherSubmitButton"
+            app:layout_constraintTop_toBottomOf="@id/fragmentFindVoucherVoucherTokenMyFormBar"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintVertical_bias="0"
+            android:layout_marginTop="@dimen/dimen_universe_form_margin_top"
+            android:background="@color/color_universe_app_theme_color"
+            android:text="@string/string_universe_find_voucher"
+            android:textColor="@color/color_universe_foreground"
+            style="@style/style_universe_button"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"/>
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 

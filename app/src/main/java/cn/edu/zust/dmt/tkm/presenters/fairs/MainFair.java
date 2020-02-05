@@ -5,18 +5,20 @@ import android.view.View;
 
 import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
-import androidx.viewpager.widget.ViewPager;
+import androidx.viewpager2.widget.ViewPager2;
 
 import java.util.ArrayList;
 import java.util.List;
 
 import cn.edu.zust.dmt.tkm.R;
-import cn.edu.zust.dmt.tkm.presenters.adapters.BaseFragmentPagerAdapter;
+import cn.edu.zust.dmt.tkm.interfaces.listeners.MainFairListener;
+import cn.edu.zust.dmt.tkm.presenters.adapters.MainViewPager2Adapter;
+import cn.edu.zust.dmt.tkm.views.activities.BaseActivity;
 import cn.edu.zust.dmt.tkm.views.fragments.HomeFragment;
 import cn.edu.zust.dmt.tkm.views.fragments.ManagementFragment;
 import cn.edu.zust.dmt.tkm.views.fragments.MessageFragment;
 import cn.edu.zust.dmt.tkm.views.fragments.SettingsFragment;
-import cn.edu.zust.dmt.tkm.interfaces.listeners.MainFairListener;
+import cn.edu.zust.dmt.tkm.views.widgets.combined.MyTopBar;
 
 /**
  * @author MR.M
@@ -44,8 +46,9 @@ public class MainFair {
             INSTANCE = new MainFair();
         }
         INSTANCE.mCurrentListener = mainFairListener;
+        INSTANCE.setImmersiveTopView();
+        INSTANCE.setMainViewPager2();
         INSTANCE.parseIntentToMain();
-        INSTANCE.setMainViewPager();
         INSTANCE.setHomeButton();
         INSTANCE.setManagementButton();
         INSTANCE.setMessageButton();
@@ -61,7 +64,7 @@ public class MainFair {
 
             if (string != null) {
                 try {
-//                    this.getClass().getDeclaredMethod("replaceTo" + string + "Fragment").invoke(this);
+                    this.getClass().getDeclaredMethod("load" + string + "Fragment").invoke(this);
                     this.getClass().getDeclaredMethod("set" + string + "TopBar").invoke(this);
                 } catch (Exception e) {
                     e.printStackTrace();
@@ -70,16 +73,30 @@ public class MainFair {
         }
     }
 
-    private void setMainViewPager() {
-        ViewPager viewPager = mCurrentListener.getMainViewPager();
+    private void setImmersiveTopView() {
+        mCurrentListener.setImmersiveTopView(mCurrentListener.getMyTopBar());
+    }
+
+    private void setMainViewPager2() {
+        ViewPager2 viewPager2 = mCurrentListener.getMainViewPager2();
         List<Fragment> fragmentList = new ArrayList<>();
         fragmentList.add(new HomeFragment());
         fragmentList.add(new ManagementFragment());
         fragmentList.add(new MessageFragment());
         fragmentList.add(new SettingsFragment());
-        viewPager.setAdapter(new BaseFragmentPagerAdapter(mCurrentListener.getFragmentManagerMethods().getMyFragmentManager(),
-                fragmentList));
-        viewPager.setOffscreenPageLimit(1);
+        viewPager2.setAdapter(new MainViewPager2Adapter((BaseActivity) mCurrentListener, fragmentList));
+        viewPager2.registerOnPageChangeCallback(new ViewPager2.OnPageChangeCallback() {
+            @Override
+            public void onPageSelected(int position) {
+                super.onPageSelected(position);
+                switch (position){
+                    case 0: setHomeTopBar();break;
+                    case 1: setManagementTopBar();break;
+                    case 2: setMessageTopBar();break;
+                    case 3: setSettingsTopBar();break;
+                }
+            }
+        });
     }
 
     private void setHomeButton() {
@@ -87,7 +104,7 @@ public class MainFair {
         view.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                replaceToHomeFragment();
+                loadHomeFragment();
                 setHomeTopBar();
             }
         });
@@ -98,7 +115,7 @@ public class MainFair {
         view.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                replaceToManagementFragment();
+                loadManagementFragment();
                 setManagementTopBar();
             }
         });
@@ -109,7 +126,7 @@ public class MainFair {
         view.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                replaceToMessageFragment();
+                loadMessageFragment();
                 setMessageTopBar();
             }
         });
@@ -120,48 +137,53 @@ public class MainFair {
         view.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                replaceToSettingsFragment();
+                loadSettingsFragment();
                 setSettingsTopBar();
             }
         });
     }
 
-    private void replaceToHomeFragment() {
-        mCurrentListener.getMainViewPager().setCurrentItem(0);
+    private void loadHomeFragment() {
+        mCurrentListener.getMainViewPager2().setCurrentItem(0);
     }
 
-    private void replaceToManagementFragment() {
-        mCurrentListener.getMainViewPager().setCurrentItem(1);
+    private void loadManagementFragment() {
+        mCurrentListener.getMainViewPager2().setCurrentItem(1);
     }
 
-    private void replaceToMessageFragment() {
-        mCurrentListener.getMainViewPager().setCurrentItem(2);
+    private void loadMessageFragment() {
+        mCurrentListener.getMainViewPager2().setCurrentItem(2);
     }
 
-    private void replaceToSettingsFragment() {
-        mCurrentListener.getMainViewPager().setCurrentItem(3);
+    private void loadSettingsFragment() {
+        mCurrentListener.getMainViewPager2().setCurrentItem(3);
     }
 
     /**
      * @description set topBar title and buttons
      */
     private void setHomeTopBar() {
-        mCurrentListener.setTopBarTitle(R.string.string_activity_main_home);
-        mCurrentListener.showTopBarRightButton(R.drawable.icon_universe_settings);
+        MyTopBar myTopBar = mCurrentListener.getMyTopBar();
+        myTopBar.setTitle(R.string.string_activity_main_home);
+        //todo:XML中myTopBar设置width为0时设置icon无效，设置title有效
+        myTopBar.showRightButton(R.drawable.icon_universe_settings);
     }
 
     private void setManagementTopBar() {
-        mCurrentListener.setTopBarTitle(R.string.string_activity_main_management);
-        mCurrentListener.showTopBarRightButton(R.drawable.icon_universe_settings);
+        MyTopBar myTopBar = mCurrentListener.getMyTopBar();
+        myTopBar.setTitle(R.string.string_activity_main_management);
+        myTopBar.showRightButton(R.drawable.icon_universe_settings);
     }
 
     private void setMessageTopBar() {
-        mCurrentListener.setTopBarTitle(R.string.string_activity_main_message);
-        mCurrentListener.showTopBarRightButton(R.drawable.icon_universe_settings);
+        MyTopBar myTopBar = mCurrentListener.getMyTopBar();
+        myTopBar.setTitle(R.string.string_activity_main_message);
+        myTopBar.showRightButton(R.drawable.icon_universe_settings);
     }
 
     private void setSettingsTopBar() {
-        mCurrentListener.setTopBarTitle(R.string.string_activity_main_settings);
-        mCurrentListener.hideTopBarRightButton();
+        MyTopBar myTopBar = mCurrentListener.getMyTopBar();
+        myTopBar.setTitle(R.string.string_activity_main_settings);
+        myTopBar.hideRightButton();
     }
 }

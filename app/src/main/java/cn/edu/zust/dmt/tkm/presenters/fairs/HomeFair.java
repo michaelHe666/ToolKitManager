@@ -7,7 +7,7 @@ import androidx.recyclerview.widget.RecyclerView;
 import java.util.ArrayList;
 import java.util.List;
 
-import cn.edu.zust.dmt.tkm.presenters.adapters.ToolKitRecyclerViewAdapter;
+import cn.edu.zust.dmt.tkm.presenters.adapters.HomeRecyclerViewAdapter;
 import cn.edu.zust.dmt.tkm.interfaces.listeners.HomeFairListener;
 import cn.edu.zust.dmt.tkm.models.MyToolKitModel;
 
@@ -47,7 +47,7 @@ public class HomeFair {
         myMessageModelList.add(new MyToolKitModel("机械工具夹T4", "2019/10/31", 1, 0));
         myMessageModelList.add(new MyToolKitModel("机械工具夹T5", "2019/4/6", 1, 1));
 
-        ToolKitRecyclerViewAdapter adapter = new ToolKitRecyclerViewAdapter(myMessageModelList);
+        HomeRecyclerViewAdapter adapter = new HomeRecyclerViewAdapter(myMessageModelList);
         RecyclerView recyclerView = mCurrentListener.getToolKitRecyclerView();
         LinearLayoutManager linearLayoutManager = new LinearLayoutManager(recyclerView.getContext());
         linearLayoutManager.setOrientation(RecyclerView.VERTICAL);

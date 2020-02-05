@@ -12,6 +12,7 @@ import cn.edu.zust.dmt.tkm.R;
 import cn.edu.zust.dmt.tkm.interfaces.listeners.LoginFairListener;
 import cn.edu.zust.dmt.tkm.presenters.fairs.LoginFair;
 import cn.edu.zust.dmt.tkm.views.widgets.combined.MyFormBar;
+import cn.edu.zust.dmt.tkm.views.widgets.combined.MyTopBar;
 
 /**
  * @author MR.M
@@ -24,6 +25,7 @@ import cn.edu.zust.dmt.tkm.views.widgets.combined.MyFormBar;
 public class LoginFragment extends BaseFragment
         implements LoginFairListener {
 
+    private MyTopBar mTopBar;
     private MyFormBar mVoucherNameEditText;
     private MyFormBar mVoucherTokenEditText;
     private Button mSubmitButton;
@@ -36,6 +38,7 @@ public class LoginFragment extends BaseFragment
 
     @Override
     protected final void initializeMemberVariables(View contentView) {
+        mTopBar = contentView.findViewById(R.id.fragmentLoginMyTopBar);
         mVoucherNameEditText = contentView.findViewById(R.id.fragmentLoginVoucherNameMyFormBar);
         mVoucherTokenEditText = contentView.findViewById(R.id.fragmentLoginVoucherTokenMyFormBar);
         mSubmitButton = contentView.findViewById(R.id.fragmentLoginSubmitButton);
@@ -45,6 +48,12 @@ public class LoginFragment extends BaseFragment
     @Override
     protected final void bindDataToView(View contentView) {
         LoginFair.loadFair(this);
+    }
+
+    @NonNull
+    @Override
+    public final View getImmersiveTopView() {
+        return mTopBar;
     }
 
     @NonNull

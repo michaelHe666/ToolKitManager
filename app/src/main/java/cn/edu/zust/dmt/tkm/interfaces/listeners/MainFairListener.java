@@ -5,6 +5,9 @@ import android.view.View;
 
 import androidx.annotation.NonNull;
 import androidx.viewpager.widget.ViewPager;
+import androidx.viewpager2.widget.ViewPager2;
+
+import cn.edu.zust.dmt.tkm.views.widgets.combined.MyTopBar;
 
 /**
  * @author MR.M
@@ -14,18 +17,9 @@ import androidx.viewpager.widget.ViewPager;
  * @time 1/1/2020 18:20
  * copyright(c) all rights reserved by MR.M
  **/
-public interface MainFairListener extends BaseFairListener{
-    void hideTopBarRightButton();
-
-    /**
-     * @param drawableRID show topBar right button by drawableRID
-     */
-    void showTopBarRightButton(int drawableRID);
-
-    /**
-     * @param stringRID set topBar title by string RID
-     */
-    void setTopBarTitle(int stringRID);
+public interface MainFairListener extends BaseFairListener {
+    @NonNull
+    MyTopBar getMyTopBar();
 
     /**
      * @return intent to activity contains main views
@@ -37,7 +31,7 @@ public interface MainFairListener extends BaseFairListener{
      * @return container
      */
     @NonNull
-    ViewPager getMainViewPager();
+    ViewPager2 getMainViewPager2();
 
     /**
      * @return any view which can trigger home event by onClickListener

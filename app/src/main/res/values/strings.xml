@@ -5,6 +5,7 @@
     <string name="string_universe_processing_bar_text_wait">加载中</string>
     <string name="string_universe_login">登录</string>
     <string name="string_universe_register">注册</string>
+    <string name="string_universe_find_voucher">找回凭证</string>
     <string name="string_universe_voucher">凭证</string>
     <string name="string_universe_token">令牌</string>
 
@@ -28,6 +29,10 @@
     <!--strings for fragment_login-->
     <string name="string_fragment_login_voucher_hint">请输入手机号</string>
     <string name="string_fragment_login_token_hint">请输入密码</string>
+
+    <!--strings for fragment_register-->
+    <string name="string_fragment_register_voucher_hint">请输入手机号</string>
+    <string name="string_fragment_register_token_hint">请输入密码</string>
 
     <!--strings for fragment_home-->
     <string name="string_fragment_home_title_deadline">归还日期</string>

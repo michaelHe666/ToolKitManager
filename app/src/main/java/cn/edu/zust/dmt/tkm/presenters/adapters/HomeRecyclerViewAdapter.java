@@ -22,11 +22,11 @@ import cn.edu.zust.dmt.tkm.models.MyToolKitModel;
  * @time 1/5/2020 20:07
  * copyright(c) all rights reserved by MR.M
  **/
-public class ToolKitRecyclerViewAdapter extends RecyclerView.Adapter<ToolKitRecyclerViewAdapter.MyViewHolder> {
+public class HomeRecyclerViewAdapter extends RecyclerView.Adapter<HomeRecyclerViewAdapter.MyViewHolder> {
 
     private List<MyToolKitModel> myToolKitModelList;
 
-    public ToolKitRecyclerViewAdapter(List<MyToolKitModel> myToolKitModelList) {
+    public HomeRecyclerViewAdapter(List<MyToolKitModel> myToolKitModelList) {
         this.myToolKitModelList = myToolKitModelList;
     }
 

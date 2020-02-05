@@ -72,7 +72,7 @@
             app:layout_constraintVertical_bias="0"
             android:layout_marginTop="@dimen/dimen_universe_form_margin_item"
             android:background="@color/color_universe_foreground"
-            android:text="@string/string_universe_register"
+            android:text="@string/string_universe_find_voucher"
             android:textColor="@color/color_universe_app_theme_color"
             style="@style/style_universe_button"
             android:layout_width="0dp"

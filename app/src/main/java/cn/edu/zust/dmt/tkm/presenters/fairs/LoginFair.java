@@ -8,6 +8,8 @@ import androidx.annotation.NonNull;
 
 import com.google.gson.Gson;
 
+import org.jetbrains.annotations.Nullable;
+
 import cn.edu.zust.dmt.tkm.R;
 import cn.edu.zust.dmt.tkm.interfaces.BaseThreadCallbackInterface;
 import cn.edu.zust.dmt.tkm.interfaces.listeners.LoginFairListener;
@@ -16,6 +18,7 @@ import cn.edu.zust.dmt.tkm.models.responds.BaseRespondModel;
 import cn.edu.zust.dmt.tkm.models.responds.PostLoginRespondModel;
 import cn.edu.zust.dmt.tkm.presenters.helpers.HttpHelper;
 import cn.edu.zust.dmt.tkm.presenters.networks.BaseCallbackPost;
+import cn.edu.zust.dmt.tkm.views.activities.EntranceActivity;
 import cn.edu.zust.dmt.tkm.views.activities.MainActivity;
 
 /**
@@ -36,6 +39,7 @@ public class LoginFair {
      * @description forbidden create class by new
      */
     private LoginFair() {
+        mCurrentListener = null;
     }
 
     public static synchronized void loadFair(@NonNull LoginFairListener loginFairListener) {
@@ -43,17 +47,36 @@ public class LoginFair {
             INSTANCE = new LoginFair();
         }
         INSTANCE.mCurrentListener = loginFairListener;
-        INSTANCE.setSubmitButton();
+        INSTANCE.setImmersiveView();
+        INSTANCE.setSubmitTriggerView();
+        INSTANCE.setFindVoucherTriggerView();
+    }
+
+    private void setImmersiveView() {
+        mCurrentListener.setImmersiveTopView(mCurrentListener.getImmersiveTopView());
     }
 
     /**
      * @description set submitButton OnClickListener
      */
-    private void setSubmitButton() {
+    private void setSubmitTriggerView() {
         mCurrentListener.getSubmitTriggerView().setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 startLogin();
+            }
+        });
+    }
+
+    private void setFindVoucherTriggerView() {
+        mCurrentListener.getFindVoucherTriggerView().setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Bundle bundle = new Bundle();
+                bundle.putString("target", "findVoucher");
+                mCurrentListener.getActivityStartMethods().startBaseActivity(
+                        EntranceActivity.class, bundle
+                );
             }
         });
     }
@@ -94,6 +117,7 @@ public class LoginFair {
      * @param object get callback obj
      * @return baseRespondModel parsed form object
      */
+    @Nullable
     private BaseRespondModel parseCallbackObj(Object object) {
         mCurrentListener.hideLoadingProgress();
         if (object != null) {
@@ -109,7 +133,7 @@ public class LoginFair {
             return baseRespondModel;
         }
         Bundle bundle = new Bundle();
-        bundle.putString("key_target_fragment", "Home");
+        bundle.putString("key_target_fragment", "Settings");
         mCurrentListener.getActivityStartMethods().startBaseActivity(MainActivity.class, bundle);
         return null;
     }

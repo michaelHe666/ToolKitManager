@@ -5,11 +5,11 @@ import android.content.pm.ActivityInfo;
 import android.graphics.Color;
 import android.os.Bundle;
 import android.text.TextUtils;
-import android.util.DisplayMetrics;
 import android.view.Gravity;
 import android.view.KeyEvent;
 import android.view.View;
 import android.view.ViewGroup;
+import android.view.ViewTreeObserver;
 import android.view.Window;
 import android.view.WindowManager;
 
@@ -212,15 +212,22 @@ public abstract class BaseActivity extends AppCompatActivity
     }
 
     @Override
-    public void setImmersiveTopView(@NonNull View view) {
-        int topBarHeight = this.getResources().getDimensionPixelSize(getResources().getIdentifier("status_bar_height", "dimen", "android"));
-        ViewGroup.LayoutParams layoutParams = view.getLayoutParams();
-        DisplayMetrics displayMetrics = new DisplayMetrics();
-        getWindowManager().getDefaultDisplay().getMetrics(displayMetrics);
-        layoutParams.height = displayMetrics.widthPixels / 9 + topBarHeight;
-        layoutParams.width = displayMetrics.widthPixels;
-        view.setLayoutParams(layoutParams);
-        view.setPadding(0, topBarHeight, 0, 0);
+    public void setImmersiveTopView(@NonNull final View view) {
+        final int topBarHeight = this.getResources().getDimensionPixelSize(getResources().getIdentifier("status_bar_height", "dimen", "android"));
+        view.getViewTreeObserver().addOnPreDrawListener(new ViewTreeObserver.OnPreDrawListener() {
+            @Override
+            public boolean onPreDraw() {
+                ViewGroup.LayoutParams layoutParams = view.getLayoutParams();
+                layoutParams.height = view.getHeight() + topBarHeight;
+                view.setLayoutParams(layoutParams);
+                view.setPadding(view.getPaddingLeft()
+                        , view.getPaddingTop() + topBarHeight
+                        , view.getPaddingRight()
+                        , view.getPaddingBottom());
+                view.getViewTreeObserver().removeOnPreDrawListener(this);
+                return false;
+            }
+        });
     }
 
     /**

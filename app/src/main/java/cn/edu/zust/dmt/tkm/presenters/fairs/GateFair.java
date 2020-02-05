@@ -25,6 +25,7 @@ public class GateFair {
      * @description forbidden create class by new
      */
     private GateFair() {
+        mCurrentListener = null;
     }
 
     /**
