@@ -2,33 +2,43 @@
 <resources>
 
     <declare-styleable name="MyTopBar">
-        <attr name="myTopBarTitle" format="string"/>
-        <attr name="myTopBarLeftIcon" format="reference"/>
-        <attr name="myTopBarShowLeftIcon" format="boolean"/>
-        <attr name="myTopBarRightIcon" format="reference"/>
-        <attr name="myTopBarShowRightIcon" format="boolean"/>
+        <attr name="myTopBarTitle" format="string" />
+        <attr name="myTopBarLeftIcon" format="reference" />
+        <attr name="myTopBarShowLeftIcon" format="boolean" />
+        <attr name="myTopBarRightIcon" format="reference" />
+        <attr name="myTopBarShowRightIcon" format="boolean" />
     </declare-styleable>
 
     <declare-styleable name="MyOptionCard">
-        <attr name="myOptionCardCornerRadius" format="dimension"/>
-        <attr name="myOptionCardTitle" format="string"/>
-        <attr name="myOptionCardIcon" format="reference"/>
-        <attr name="myOptionCardBackgroundColor" format="reference"/>
+        <attr name="myOptionCardCornerRadius" format="dimension" />
+        <attr name="myOptionCardTitle" format="string" />
+        <attr name="myOptionCardIcon" format="reference" />
+        <attr name="myOptionCardBackgroundColor" format="reference" />
     </declare-styleable>
 
     <declare-styleable name="MyMessageBar">
-        <attr name="myMessageBarTitle" format="string"/>
-        <attr name="myMessageBarIcon" format="reference"/>
+        <attr name="myMessageBarTitle" format="string" />
+        <attr name="myMessageBarIcon" format="reference" />
     </declare-styleable>
 
     <declare-styleable name="MyMenuBar">
-        <attr name="myMenuBarTitle" format="string"/>
-        <attr name="myMenuBarIcon" format="reference"/>
+        <attr name="myMenuBarTitle" format="string" />
+        <attr name="myMenuBarIcon" format="reference" />
     </declare-styleable>
 
     <declare-styleable name="MyFormBar">
-        <attr name="myFormBarTitle" format="string"/>
-        <attr name="myFormBarHint" format="string"/>
-        <attr name="myFormBarTextSize" format="dimension"/>
+        <attr name="myFormBarTitle" format="string" />
+        <attr name="myFormBarHint" format="string" />
+        <attr name="myFormBarTextSize" format="dimension" />
+    </declare-styleable>
+
+    <!-- next is customized views-->
+    <declare-styleable name="MyTreeView">
+        <attr name="myTreeViewBaseColor" format="color" />
+<!--        <attr name="myTreeViewPosture">-->
+<!--            <enum name="sparse" value="0" />-->
+<!--            <enum name="normal" value="1" />-->
+<!--            <enum name="flourish" value="2" />-->
+<!--        </attr>-->
     </declare-styleable>
 </resources>

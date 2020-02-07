@@ -11,6 +11,7 @@ import androidx.annotation.NonNull;
 import cn.edu.zust.dmt.tkm.R;
 import cn.edu.zust.dmt.tkm.interfaces.listeners.GateFairListener;
 import cn.edu.zust.dmt.tkm.presenters.fairs.GateFair;
+import cn.edu.zust.dmt.tkm.views.widgets.customized.MyTreeView;
 
 /**
  * @author MR.M
@@ -33,6 +34,7 @@ public class GateFragment extends BaseFragment
 
     @Override
     protected final void initializeMemberVariables(View contentView) {
+        getLifecycle().addObserver((MyTreeView) contentView.findViewById(R.id.fragmentGateMyTreeView));
         mLoginButton = contentView.findViewById(R.id.fragmentGateLoginButton);
         mRegisterButton = contentView.findViewById(R.id.fragmentGateRegisterButton);
     }

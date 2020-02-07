@@ -4,39 +4,44 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:background="@drawable/star_cloud">
-    
+    android:layout_height="match_parent">
+
+    <cn.edu.zust.dmt.tkm.views.widgets.customized.MyTreeView
+        android:id="@+id/fragmentGateMyTreeView"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:myTreeViewBaseColor="@color/color_universe_app_theme_color" />
+
     <Button
         android:id="@+id/fragmentGateLoginButton"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toLeftOf="@id/fragmentGateRegisterButton"
-        app:layout_constraintWidth_percent="0.3"
-        app:layout_constraintDimensionRatio="3:1"
-        app:layout_constraintVertical_bias="0.9"
         style="@style/style_universe_button"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:background="@color/color_universe_app_theme_color"
         android:text="@string/string_universe_login"
         android:textColor="@color/color_universe_foreground"
-        android:background="@color/color_universe_app_theme_color"
-        android:layout_width="0dp"
-        android:layout_height="0dp"/>
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintDimensionRatio="3:1"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toLeftOf="@id/fragmentGateRegisterButton"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.9"
+        app:layout_constraintWidth_percent="0.3" />
 
     <Button
         android:id="@+id/fragmentGateRegisterButton"
-        app:layout_constraintTop_toTopOf="@id/fragmentGateLoginButton"
-        app:layout_constraintBottom_toBottomOf="@id/fragmentGateLoginButton"
-        app:layout_constraintLeft_toRightOf="@id/fragmentGateLoginButton"
-        app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintWidth_percent="0.3"
-        app:layout_constraintDimensionRatio="3:1"
         style="@style/style_universe_button"
-        android:text="@string/string_universe_register"
-        android:textColor="@color/color_universe_app_theme_color"
-        android:background="@color/color_universe_foreground"
         android:layout_width="0dp"
         android:layout_height="0dp"
-        tools:text="@string/string_universe_register"/>
+        android:background="@color/color_universe_foreground"
+        android:text="@string/string_universe_register"
+        android:textColor="@color/color_universe_app_theme_color"
+        app:layout_constraintBottom_toBottomOf="@id/fragmentGateLoginButton"
+        app:layout_constraintDimensionRatio="3:1"
+        app:layout_constraintLeft_toRightOf="@id/fragmentGateLoginButton"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="@id/fragmentGateLoginButton"
+        app:layout_constraintWidth_percent="0.3"
+        tools:text="@string/string_universe_register" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
