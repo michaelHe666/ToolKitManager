@@ -35,10 +35,5 @@
     <!-- next is customized views-->
     <declare-styleable name="MyTreeView">
         <attr name="myTreeViewBaseColor" format="color" />
-<!--        <attr name="myTreeViewPosture">-->
-<!--            <enum name="sparse" value="0" />-->
-<!--            <enum name="normal" value="1" />-->
-<!--            <enum name="flourish" value="2" />-->
-<!--        </attr>-->
     </declare-styleable>
 </resources>

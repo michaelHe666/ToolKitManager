@@ -31,11 +31,16 @@ import cn.edu.zust.dmt.tkm.presenters.helpers.ToastHelper;
 import cn.edu.zust.dmt.tkm.presenters.tools.BaseActivityStackManager;
 
 /**
+ * Project-level for all activities to extend.
+ *
+ * <p>This class is aimed at cut down repeatable codes for all activity.
+ * Thus only implements and methods universe shall be describe here.</p>
+ *
  * @author MR.M
  * @projectName tkm
  * @packageName cn.edu.zust.dmt.tkm.views.activities
  * @description base view for v in MVP-pattern
- * @time 12/31/2019 14:32
+ * @since 12/31/2019 14:32
  * copyright(c) all rights reserved by MR.M
  **/
 public abstract class BaseActivity extends AppCompatActivity
@@ -44,7 +49,7 @@ public abstract class BaseActivity extends AppCompatActivity
         BaseFairListener {
 
     /**
-     * @description processing dialog
+     * @description processing dialog view to block operation
      */
     private AlertDialog mProgressDialog;
 
